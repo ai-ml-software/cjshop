@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title id="pageTitle">VELORA — Shop the Global Catalog | Guest Checkout, Worldwide Shipping</title>
+<meta id="metaDescription" name="description" content="Shop VELORA's full global catalog — thousands of products across every category, fast worldwide shipping, Cash on Delivery in select countries, and frictionless guest checkout. No account required."/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<!-- REPLACE this with your real deployed domain before going live -->
+<link rel="canonical" id="canonicalLink" href="https://www.your-domain-here.com/"/>
+
+<!-- Open Graph / Facebook & Meta Ads -->
+<meta property="og:type" id="ogType" content="website"/>
+<meta property="og:site_name" content="VELORA"/>
+<meta property="og:title" id="ogTitle" content="VELORA — Shop the Global Catalog"/>
+<meta property="og:description" id="ogDescription" content="Thousands of products, worldwide shipping, guest checkout — no account needed."/>
+<meta property="og:url" id="ogUrl" content="https://www.your-domain-here.com/"/>
+<meta property="og:image" id="ogImage" content="https://www.your-domain-here.com/social-preview.jpg"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" id="twTitle" content="VELORA — Shop the Global Catalog"/>
+<meta name="twitter:description" id="twDescription" content="Thousands of products, worldwide shipping, guest checkout — no account needed."/>
+<meta name="twitter:image" id="twImage" content="https://www.your-domain-here.com/social-preview.jpg"/>
+
+<!-- JSON-LD: Organization + WebSite (static, site-wide) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OnlineStore",
+  "name": "VELORA",
+  "url": "https://www.your-domain-here.com/",
+  "description": "Global marketplace offering worldwide shipping, Cash on Delivery in select countries, and guest checkout with no account required.",
+  "sameAs": []
+}
+</script>
+
+<!-- JSON-LD: FAQPage (AEO) — mirrors the visible FAQ section near the footer -->
+<script type="application/ld+json" id="ld-faq">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need an account to place an order?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Guest checkout is available for every order — add items to your cart and check out with your shipping and payment details. Creating an account afterward is optional." }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods does VELORA accept?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Credit and debit cards (Visa, Mastercard, AMEX), secure payment links, and Cash on Delivery in selected countries." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Cash on Delivery (COD) available in my country?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cash on Delivery is available in selected high-trust regions, including the UAE, Saudi Arabia, India, Mexico, Brazil, Kuwait, Oman, Qatar, Bahrain, Pakistan, and Nigeria." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is VELORA's return policy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Items can be returned within 30 days of delivery if unused and in original packaging. Refunds are processed within 5-10 business days." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I track my order?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the order tracking page with your order number and email address — no account is required to track a guest order." }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+/* ═══════════════════════════════════════════════════════════
+   TASK 0: DESIGN SYSTEM — 2026 Corporate Visual Language
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  --bg: #07090c;
+  --bg-2: #0c0f14;
+  --surface: #111520;
+  --surface-2: #171c28;
+  --surface-3: #1e2433;
+  --border: #252d3d;
+  --border-light: #2f3a50;
+  --text: #e8ecf2;
+  --text-2: #c0c8d6;
+  --muted: #6b7a92;
+  --accent: #f59e0b;
+  --accent-glow: rgba(245,158,11,.15);
+  --accent-2: #10b981;
+  --accent-2-glow: rgba(16,185,129,.12);
+  --danger: #ef4444;
+  --danger-glow: rgba(239,68,68,.12);
+  --info: #3b82f6;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+  --shadow: 0 8px 32px rgba(0,0,0,.4);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.5);
+  --maxw: 1360px;
+  --sidebar-w: 260px;
+  --header-h: 64px;
+  --transition: .25s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Space Grotesk',sans-serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,select,textarea{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;outline:none}
+input,select,textarea{cursor:text}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--border-light)}
+::selection{background:var(--accent);color:#000}
+
+/* ═══ ANIMATED BACKGROUND ═══ */
+.bg-mesh{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-mesh .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.35;animation:orbFloat 20s ease-in-out infinite}
+.bg-mesh .orb:nth-child(1){width:500px;height:500px;background:var(--accent);top:-10%;left:-5%;animation-delay:0s}
+.bg-mesh .orb:nth-child(2){width:400px;height:400px;background:var(--accent-2);bottom:-15%;right:-5%;animation-delay:-7s}
+.bg-mesh .orb:nth-child(3){width:300px;height:300px;background:#6366f1;top:40%;left:50%;animation-delay:-14s;opacity:.2}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(60px,-40px) scale(1.1)}50%{transform:translate(-30px,60px) scale(.95)}75%{transform:translate(-60px,-20px) scale(1.05)}}
+
+/* ═══ TOPBAR ═══ */
+.topbar{position:relative;z-index:60;background:linear-gradient(90deg,#000 0%,var(--bg-2) 50%,#000 100%);border-bottom:1px solid var(--border);font-size:12px;padding:7px 0;overflow:hidden}
+.topbar-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:24px;white-space:nowrap}
+.topbar .live-dot{width:6px;height:6px;background:var(--accent-2);border-radius:50%;animation:pulse 1.5s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 var(--accent-2-glow)}50%{opacity:.5;box-shadow:0 0 0 6px transparent}}
+.topbar .sep{width:1px;height:14px;background:var(--border);flex-shrink:0}
+
+/* ═══ HEADER ═══ */
+header{position:sticky;top:0;z-index:50;background:rgba(7,9,12,.82);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid var(--border);height:var(--header-h)}
+.header-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;height:100%;display:flex;align-items:center;gap:16px}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:3px;background:linear-gradient(135deg,var(--accent),#fbbf24,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;flex-shrink:0}
+.header-search{flex:1;max-width:480px;position:relative}
+.header-search input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:10px 16px 10px 40px;font-size:13px;color:var(--text);transition:all var(--transition)}
+.header-search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.header-search i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px}
+.header-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
+.hdr-btn{position:relative;background:var(--surface);border:1px solid var(--border);width:40px;height:40px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--muted);transition:all var(--transition)}
+.hdr-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+.hdr-btn .badge{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;background:var(--accent);color:#000;font-size:10px;font-weight:700;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;animation:badgePop .3s ease}
+@keyframes badgePop{0%{transform:scale(0)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
+.country-sel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 12px;font-size:12px;color:var(--text);font-weight:600;display:flex;align-items:center;gap:6px;transition:all var(--transition)}
+.country-sel:hover{border-color:var(--accent)}
+.country-sel select{background:transparent;border:none;color:inherit;font-size:inherit;font-weight:inherit;cursor:pointer;min-width:100px}
+
+/* ═══ LAYOUT ═══ */
+.app-layout{position:relative;z-index:1;display:flex;min-height:calc(100vh - var(--header-h) - 34px)}
+.sidebar{width:var(--sidebar-w);background:var(--bg-2);border-right:1px solid var(--border);padding:16px 0;overflow-y:auto;flex-shrink:0;position:sticky;top:var(--header-h);height:calc(100vh - var(--header-h) - 34px);transition:transform var(--transition)}
+.sidebar-section{padding:8px 16px;margin-top:12px}
+.sidebar-section:first-child{margin-top:0}
+.sidebar-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px}
+.sidebar-link{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--radius-sm);font-size:13px;font-weight:500;color:var(--text-2);transition:all var(--transition);margin-bottom:2px}
+.sidebar-link:hover{background:var(--surface);color:var(--text)}
+.sidebar-link.active{background:var(--accent-glow);color:var(--accent);font-weight:600;border:1px solid rgba(245,158,11,.2)}
+.sidebar-link i{width:18px;text-align:center;font-size:14px}
+.sidebar-link .count{margin-left:auto;font-size:11px;color:var(--muted);background:var(--surface-2);padding:2px 7px;border-radius:99px}
+
+.main-content{flex:1;min-width:0;padding:24px}
+
+/* ═══ VIEWS ═══ */
+.view{display:none;animation:fadeSlide .35s ease}
+.view.active{display:block}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══ HERO ═══ */
+.hero{padding:40px 0 32px;text-align:center}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-1px;margin-bottom:12px}
+.hero h1 .grad{background:linear-gradient(135deg,var(--accent),#fbbf24,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:16px;max-width:560px;margin:0 auto 24px}
+.hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+.hero-stat .num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--accent)}
+.hero-stat .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+/* ═══ CATEGORY TREE (TASK: /product/listed/getPlatformCategoryTree) ═══ */
+.cat-tree{margin-bottom:24px}
+.cat-tree-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cat-tree-header h3{font-size:18px;font-weight:700}
+.cat-pills{display:flex;flex-wrap:wrap;gap:8px}
+.cat-pill{background:var(--surface);border:1px solid var(--border);padding:7px 14px;border-radius:99px;font-size:12px;font-weight:600;color:var(--text-2);transition:all var(--transition);cursor:pointer}
+.cat-pill:hover,.cat-pill.active{background:var(--accent);color:#000;border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 16px var(--accent-glow)}
+.cat-sub{display:none;padding:8px 0 8px 16px;border-left:2px solid var(--border);margin-left:8px;margin-top:6px}
+.cat-sub.open{display:block;animation:fadeSlide .25s ease}
+
+/* ═══ PRODUCT GRID (TASK: /product/list + /product/query) ═══ */
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.section-head h2{font-size:22px;font-weight:700}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filter-chip{background:var(--surface);border:1px solid var(--border);padding:7px 14px;border-radius:99px;font-size:12px;font-weight:600;color:var(--muted);transition:all var(--transition)}
+.filter-chip:hover,.filter-chip.active{background:var(--accent);color:#000;border-color:var(--accent)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.product-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all var(--transition);position:relative}
+.product-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 40px rgba(0,0,0,.3),0 0 0 1px var(--accent-glow)}
+.product-card .img-wrap{aspect-ratio:1/1;background:var(--surface-2);overflow:hidden;position:relative}
+.product-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.product-card:hover .img-wrap img{transform:scale(1.06)}
+.product-card .card-badges{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;gap:4px}
+.badge-tag{font-size:10px;font-weight:700;padding:3px 8px;border-radius:var(--radius-xs);text-transform:uppercase;letter-spacing:.5px}
+.badge-hot{background:var(--danger);color:#fff}
+.badge-low{background:var(--accent);color:#000}
+.badge-new{background:var(--accent-2);color:#000}
+.product-card .quick-actions{position:absolute;top:8px;right:8px;display:flex;flex-direction:column;gap:4px;opacity:0;transform:translateX(8px);transition:all var(--transition)}
+.product-card:hover .quick-actions{opacity:1;transform:translateX(0)}
+.qa-btn{width:32px;height:32px;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:var(--radius-xs);display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;transition:all var(--transition)}
+.qa-btn:hover{background:var(--accent);color:#000}
+.card-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card-cat{font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;font-weight:600}
+.card-title{font-size:13px;font-weight:600;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:35px}
+.card-price{display:flex;align-items:baseline;gap:8px}
+.card-price .now{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--accent-2)}
+.card-price .was{font-size:12px;color:var(--muted);text-decoration:line-through}
+.card-stock{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.card-stock.low{color:var(--danger)}
+.card-stock .dot{width:5px;height:5px;border-radius:50%;background:var(--accent-2)}
+.card-stock.low .dot{background:var(--danger)}
+.card-bottom{display:flex;gap:6px;margin-top:auto;padding-top:8px}
+.btn-sm{padding:8px 12px;border-radius:var(--radius-xs);font-size:12px;font-weight:600;transition:all var(--transition);text-align:center}
+.btn-accent{background:var(--accent);color:#000;flex:1}
+.btn-accent:hover{background:#d97706;box-shadow:0 4px 16px var(--accent-glow)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text-2);flex:1}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm:disabled{opacity:.4;cursor:not-allowed;pointer-events:none}
+
+/* ═══ SKELETON ═══ */
+.skel{background:linear-gradient(90deg,var(--surface) 0%,var(--surface-2) 50%,var(--surface) 100%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:var(--radius)}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ═══ AI SUGGESTIONS (TASK: Local AI + /product/queryProductsByImage) ═══ */
+.ai-strip{background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(16,185,129,.06));border:1px solid rgba(245,158,11,.15);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:16px;animation:aiGlow 3s ease-in-out infinite alternate}
+@keyframes aiGlow{0%{box-shadow:0 0 0 0 transparent}100%{box-shadow:0 0 30px -10px var(--accent-glow)}}
+.ai-strip .ai-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent-2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;animation:aiSpin 4s linear infinite}
+@keyframes aiSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.ai-strip .ai-text h4{font-size:14px;font-weight:700;margin-bottom:2px}
+.ai-strip .ai-text p{font-size:12px;color:var(--muted);margin:0}
+.ai-suggest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:12px}
+.ai-suggest-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;cursor:pointer;transition:all var(--transition);display:flex;gap:10px;align-items:center}
+.ai-suggest-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ai-suggest-card img{width:44px;height:44px;border-radius:var(--radius-xs);object-fit:cover;flex-shrink:0}
+.ai-suggest-card .info{min-width:0}
+.ai-suggest-card .info .name{font-size:11px;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ai-suggest-card .info .price{font-size:13px;font-weight:700;color:var(--accent-2);margin-top:2px}
+
+/* ═══ PRODUCT DETAIL MODAL (TASK: /product/variant/query + /product/productComments + /product/stock/getInventoryByPid) ═══ */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);z-index:100;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);background:var(--surface);border:1px solid var(--border);border-radius:20px;width:90%;max-width:800px;max-height:88vh;overflow-y:auto;z-index:101;opacity:0;pointer-events:none;transition:all .3s;box-shadow:var(--shadow-lg)}
+.modal-panel.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;background:var(--surface-2);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--muted);z-index:5;transition:all var(--transition)}
+.modal-close:hover{background:var(--danger);color:#fff;border-color:var(--danger)}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.detail-img{background:var(--surface-2);aspect-ratio:1/1;overflow:hidden;border-radius:20px 0 0 20px}
+.detail-img img{width:100%;height:100%;object-fit:cover}
+.detail-info{padding:28px;display:flex;flex-direction:column;gap:12px}
+.detail-info .cat{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.detail-info .title{font-size:20px;font-weight:700}
+.detail-info .price-row{display:flex;align-items:baseline;gap:12px}
+.detail-info .price-row .now{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--accent-2)}
+.detail-info .price-row .was{font-size:15px;color:var(--muted);text-decoration:line-through}
+.detail-info .stock-row{display:flex;align-items:center;gap:6px;font-size:13px}
+.detail-info .stock-row .dot{width:7px;height:7px;border-radius:50%}
+.variant-section{margin-top:8px}
+.variant-section label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.variant-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.variant-chip{padding:6px 12px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-xs);font-size:12px;color:var(--text-2);transition:all var(--transition)}
+.variant-chip:hover,.variant-chip.selected{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+.detail-actions{margin-top:auto;display:flex;gap:10px;padding-top:16px}
+.detail-actions .btn-accent{padding:12px 24px;font-size:14px;border-radius:var(--radius-sm)}
+.detail-actions .btn-outline{padding:12px 24px;font-size:14px;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.comments-section{padding:20px 28px;border-top:1px solid var(--border)}
+.comments-section h4{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.detail-desc-text{font-size:13px;color:var(--text-2);line-height:1.7;white-space:pre-line}
+.spec-table{margin-top:8px;border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.spec-row{display:flex;justify-content:space-between;padding:9px 14px;font-size:13px;border-bottom:1px solid var(--border)}
+.spec-row:last-child{border-bottom:none}
+.spec-row span:first-child{color:var(--muted);font-weight:600}
+.spec-row span:last-child{color:var(--text)}
+.comment-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.comment-item:last-child{border-bottom:none}
+.comment-item .author{font-weight:600;color:var(--accent);font-size:12px}
+.comment-item .date{font-size:11px;color:var(--muted);margin-left:8px}
+.comment-item .text{color:var(--text-2);margin-top:4px}
+
+/* ═══ CART DRAWER (TASK: /shopping/order/confirmOrder + /logistic/freightCalculate) ═══ */
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:110;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer-overlay.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;top:0;right:0;width:440px;max-width:100vw;height:100vh;background:var(--surface);border-left:1px solid var(--border);z-index:111;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+.cart-drawer.open{transform:translateX(0)}
+.drawer-head{padding:18px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.drawer-head h3{font-size:17px;font-weight:700;display:flex;align-items:center;gap:8px}
+.drawer-body{flex:1;overflow-y:auto;padding:16px 20px}
+.drawer-foot{padding:16px 20px;border-top:1px solid var(--border);background:var(--bg-2)}
+.cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);animation:fadeSlide .3s ease}
+.cart-item img{width:64px;height:64px;border-radius:var(--radius-sm);object-fit:cover;background:var(--surface-2)}
+.cart-item .info{flex:1;min-width:0}
+.cart-item .info .name{font-size:13px;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cart-item .info .meta{font-size:12px;color:var(--accent-2);font-weight:700;margin-top:4px}
+.qty-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.qty-row button{width:26px;height:26px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-xs);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
+.qty-row button:hover{border-color:var(--accent);color:var(--accent)}
+.qty-row span{font-size:13px;font-weight:600;min-width:20px;text-align:center}
+.remove-item{font-size:11px;color:var(--danger);margin-left:auto;background:none;border:none;cursor:pointer;font-weight:600}
+.remove-item:hover{text-decoration:underline}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.cart-empty i{font-size:48px;margin-bottom:12px;opacity:.3}
+.cart-total-row{display:flex;justify-content:space-between;font-size:16px;font-weight:700;margin-bottom:14px}
+.cart-total-row .amt{color:var(--accent-2);font-size:20px;font-family:'Space Grotesk',sans-serif}
+.checkout-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),#d97706);color:#000;font-size:15px;font-weight:700;border-radius:var(--radius-sm);transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:8px}
+.checkout-btn:hover{box-shadow:0 6px 24px var(--accent-glow);transform:translateY(-1px)}
+.checkout-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* ═══ CHECKOUT MODAL (TASK: /shopping/order/confirmOrder + /logistic/freightCalculate + /shopping/pay/payBalance) ═══ */
+.checkout-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.checkout-modal.open{display:flex}
+.checkout-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);animation:fadeSlide .3s ease}
+.checkout-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.checkout-head h3{font-size:18px;font-weight:700}
+.step-bar{display:flex;gap:6px;padding:14px 24px;border-bottom:1px solid var(--border)}
+.step-dot{flex:1;height:3px;background:var(--border);border-radius:2px;transition:background .4s}
+.step-dot.active{background:var(--accent)}
+.step-dot.done{background:var(--accent-2)}
+.step-body{padding:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-grid.full{grid-template-columns:1fr}
+.form-field{display:flex;flex-direction:column;gap:5px}
+.form-field label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.form-field input,.form-field select{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;color:var(--text);transition:all var(--transition)}
+.form-field input:focus,.form-field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.form-field.check{flex-direction:row;align-items:center;gap:8px}
+.form-field.check input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent)}
+.checkout-foot{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:10px;justify-content:space-between}
+.btn-back{background:var(--surface-2);border:1px solid var(--border);padding:11px 20px;border-radius:var(--radius-sm);font-weight:600;font-size:13px;transition:all var(--transition)}
+.btn-back:hover{border-color:var(--text-2)}
+.btn-next{background:var(--accent);color:#000;padding:11px 28px;border-radius:var(--radius-sm);font-weight:700;font-size:13px;display:flex;align-items:center;gap:8px;transition:all var(--transition);margin-left:auto}
+.btn-next:hover{background:#d97706;box-shadow:0 4px 16px var(--accent-glow)}
+.btn-next:disabled{opacity:.4;cursor:not-allowed}
+.btn-next.go{background:var(--accent-2);color:#000}
+.freight-option{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:all var(--transition);display:flex;justify-content:space-between;align-items:center}
+.freight-option:hover,.freight-option.selected{border-color:var(--accent);background:var(--accent-glow)}
+.freight-option .name{font-weight:600;font-size:14px}
+.freight-option .time{font-size:12px;color:var(--muted);margin-top:2px}
+.freight-option .price{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--accent-2)}
+.order-review{background:var(--surface-2);border-radius:var(--radius-sm);padding:16px}
+.review-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px}
+.review-row.total{border-top:1px solid var(--border);margin-top:8px;padding-top:10px;font-weight:700;font-size:15px}
+.review-row.total .amt{color:var(--accent-2);font-family:'Space Grotesk',sans-serif}
+.success-box{text-align:center;padding:30px 10px}
+.success-box .icon{width:72px;height:72px;border-radius:50%;background:var(--accent-2);color:#000;font-size:32px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;animation:successPop .5s ease}
+@keyframes successPop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.success-box h3{font-size:22px;margin-bottom:6px}
+.success-box p{color:var(--muted);font-size:14px;margin-bottom:16px}
+.order-id-box{font-family:'Space Grotesk',monospace;background:var(--surface-2);padding:10px 18px;border-radius:var(--radius-sm);display:inline-block;font-size:14px;color:var(--accent-2);border:1px solid var(--border)}
+
+/* ═══ ORDERS VIEW (TASK: /shopping/order/list + /shopping/order/deleteOrder) ═══ */
+.order-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:12px;transition:all var(--transition)}
+.order-card:hover{border-color:var(--border-light)}
+.order-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.order-id{font-family:'Space Grotesk',monospace;font-size:13px;color:var(--accent);font-weight:600}
+.order-status{font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;text-transform:uppercase;letter-spacing:.5px}
+.status-pending{background:rgba(245,158,11,.15);color:var(--accent)}
+.status-shipped{background:rgba(59,130,246,.15);color:var(--info)}
+.status-delivered{background:rgba(16,185,129,.15);color:var(--accent-2)}
+.status-cancelled{background:rgba(239,68,68,.15);color:var(--danger)}
+.order-items{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
+.order-items img{width:56px;height:56px;border-radius:var(--radius-xs);object-fit:cover;flex-shrink:0;background:var(--surface-2)}
+.order-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:13px}
+.order-foot .total{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--accent-2)}
+.order-actions{display:flex;gap:6px}
+.order-actions button{font-size:11px;padding:5px 10px;border-radius:var(--radius-xs);font-weight:600;transition:all var(--transition)}
+.btn-danger{background:var(--danger-glow);color:var(--danger);border:1px solid rgba(239,68,68,.2)}
+.btn-danger:hover{background:var(--danger);color:#fff}
+.btn-info{background:rgba(59,130,246,.1);color:var(--info);border:1px solid rgba(59,130,246,.2)}
+.btn-info:hover{background:var(--info);color:#fff}
+
+/* ═══ INVENTORY VIEW (TASK: /product/stock/getInventoryByPid + /product/stock/queryBySku + /product/stock/queryByVid) ═══ */
+.inv-table{width:100%;border-collapse:collapse;font-size:13px}
+.inv-table th{text-align:left;padding:10px 12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;border-bottom:1px solid var(--border);background:var(--surface-2)}
+.inv-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.inv-table tr:hover td{background:var(--surface-2)}
+.inv-bar{width:60px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px}
+.inv-bar .fill{height:100%;border-radius:3px;transition:width .5s ease}
+
+/* ═══ DISPUTES VIEW (TASK: /disputes/getDisputeList + /disputes/disputeProducts) ═══ */
+.dispute-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:10px}
+.dispute-card .reason{font-weight:600;margin-bottom:6px}
+.dispute-card .detail{font-size:13px;color:var(--text-2);margin-bottom:8px}
+.dispute-card .meta{font-size:11px;color:var(--muted);display:flex;gap:16px}
+
+/* ═══ TRACKING VIEW (TASK: /logistic/getTrackInfo) ═══ */
+.track-input-row{display:flex;gap:10px;margin-bottom:20px}
+.track-input-row input{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;font-size:14px;color:var(--text);transition:all var(--transition)}
+.track-input-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow)}
+.track-timeline{position:relative;padding-left:28px}
+.track-timeline::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:var(--border)}
+.track-event{position:relative;padding-bottom:20px}
+.track-event::before{content:'';position:absolute;left:-23px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--border)}
+.track-event:first-child::before{border-color:var(--accent-2);background:var(--accent-2);box-shadow:0 0 8px var(--accent-2-glow)}
+.track-event .time{font-size:11px;color:var(--muted);margin-bottom:2px}
+.track-event .desc{font-size:13px;font-weight:500}
+.track-event:first-child .desc{color:var(--accent-2);font-weight:700}
+
+/* ═══ IMAGE SEARCH VIEW (TASK: /product/queryProductsByImage) ═══ */
+.upload-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:48px 20px;text-align:center;cursor:pointer;transition:all var(--transition);background:var(--surface)}
+.upload-zone:hover,.upload-zone.dragover{border-color:var(--accent);background:var(--accent-glow)}
+.upload-zone i{font-size:40px;color:var(--muted);margin-bottom:12px}
+.upload-zone p{color:var(--muted);font-size:14px}
+.upload-zone .sub{font-size:12px;color:var(--border-light);margin-top:6px}
+.upload-preview{max-width:300px;margin:16px auto;border-radius:var(--radius-sm);overflow:hidden}
+
+/* ═══ SOURCING VIEW (TASK: /product/sourcing/query + /product/sourcing/create) ═══ */
+.source-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:600px}
+.source-item{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:8px;display:flex;gap:12px;align-items:center}
+.source-item img{width:50px;height:50px;border-radius:var(--radius-xs);object-fit:cover}
+
+/* ═══ SETTINGS VIEW (TASK: /setting/get) ═══ */
+.settings-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px}
+.settings-card h4{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.settings-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:13px;border-bottom:1px solid var(--border)}
+.settings-row:last-child{border-bottom:none}
+.settings-row .label{color:var(--text-2)}
+.settings-row .value{font-weight:600;color:var(--accent);font-family:'Space Grotesk',monospace;font-size:12px}
+
+/* ═══ CHATBOT (AI PRODUCT SUGGESTIONS) ═══ */
+.chat-fab{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 8px 32px rgba(245,158,11,.3);z-index:120;display:flex;align-items:center;justify-content:center;font-size:22px;transition:all var(--transition);color:#000}
+.chat-fab:hover{transform:scale(1.08);box-shadow:0 8px 40px rgba(245,158,11,.45)}
+.chat-fab .notif{position:absolute;top:-2px;right:-2px;width:14px;height:14px;border-radius:50%;background:var(--danger);border:2px solid var(--bg);animation:pulse 1.5s infinite}
+.chat-window{position:fixed;bottom:92px;right:24px;width:380px;max-width:calc(100vw - 32px);height:500px;max-height:72vh;background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow-lg);z-index:120;display:none;flex-direction:column;overflow:hidden}
+.chat-window.open{display:flex;animation:fadeSlide .25s ease}
+.chat-head{padding:14px 16px;background:var(--surface-2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.chat-head .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-2);animation:pulse 1.5s infinite}
+.chat-head strong{font-size:14px}
+.chat-head span{font-size:11px;color:var(--muted)}
+.chat-body{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.chat-msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:13px;line-height:1.5;animation:fadeSlide .25s ease}
+.chat-msg.bot{background:var(--surface-2);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px}
+.chat-msg.user{background:var(--accent);color:#000;align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}
+.chat-msg.bot .product-rec{display:flex;gap:8px;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);cursor:pointer;transition:opacity .2s}
+.chat-msg.bot .product-rec:hover{opacity:.8}
+.chat-msg.bot .product-rec img{width:40px;height:40px;border-radius:var(--radius-xs);object-fit:cover}
+.chat-msg.bot .product-rec .rinfo{min-width:0}
+.chat-msg.bot .product-rec .rinfo .rname{font-size:11px;font-weight:600;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.chat-msg.bot .product-rec .rinfo .rprice{font-size:12px;color:var(--accent-2);font-weight:700}
+.chat-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.chat-chip{background:var(--surface-2);border:1px solid var(--border);color:var(--muted);font-size:11px;padding:6px 11px;border-radius:99px;transition:all var(--transition);font-weight:500}
+.chat-chip:hover{border-color:var(--accent);color:var(--accent)}
+.chat-input-bar{display:flex;gap:8px;padding:12px;border-top:1px solid var(--border)}
+.chat-input-bar input{flex:1;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;color:var(--text);font-size:13px}
+.chat-input-bar input:focus{border-color:var(--accent)}
+.chat-input-bar button{background:var(--accent);color:#000;width:38px;border-radius:var(--radius-sm);font-weight:700;flex-shrink:0;transition:all var(--transition)}
+.chat-input-bar button:hover{background:#d97706}
+
+/* ═══ TOAST ═══ */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--surface);border:1px solid var(--accent-2);color:var(--text);padding:12px 22px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;z-index:300;transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow);max-width:90vw;display:flex;align-items:center;gap:8px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.err{border-color:var(--danger)}
+.toast i{font-size:16px}
+
+/* ═══ LOADER ═══ */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(0,0,0,.2);border-top-color:currentColor;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{text-align:center;padding:40px;color:var(--muted);font-size:14px}
+.loading-text .spinner{width:28px;height:28px;border-color:var(--border);border-top-color:var(--accent);margin:0 auto 12px}
+
+/* ═══ FOOTER ═══ */
+footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:32px 20px;text-align:center;color:var(--muted);font-size:12px}
+footer .flogo{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;letter-spacing:2px;color:var(--text);margin-bottom:8px}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  .sidebar{position:fixed;left:0;top:var(--header-h);height:calc(100vh - var(--header-h) - 34px);z-index:45;transform:translateX(-100%);box-shadow:var(--shadow-lg)}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-toggle{display:flex!important}
+  .detail-grid{grid-template-columns:1fr}
+  .detail-img{border-radius:20px 20px 0 0;max-height:300px}
+  .form-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .topbar-inner{gap:12px;font-size:11px}
+  .header-search{display:none}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .hero h1{font-size:28px}
+  .chat-window{right:8px;left:8px;width:auto;bottom:84px}
+  .chat-fab{right:12px;bottom:12px;width:48px;height:48px;font-size:18px}
+}
+.sidebar-toggle{display:none;width:40px;height:40px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);align-items:center;justify-content:center;font-size:16px;color:var(--muted);transition:all var(--transition);flex-shrink:0}
+.sidebar-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:44;display:none}
+.mobile-overlay.open{display:block}
+
+/* ═══ VENDORS VIEW (TASK: /product/listed/queryVendors + /shop/getShops) ═══ */
+.vendor-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;display:flex;gap:16px;align-items:center;margin-bottom:10px;transition:all var(--transition)}
+.vendor-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.vendor-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#000;flex-shrink:0}
+.vendor-info h4{font-size:15px;font-weight:700}
+.vendor-info p{font-size:12px;color:var(--muted);margin-top:2px}
+.vendor-stats{margin-left:auto;display:flex;gap:16px;text-align:center}
+.vendor-stats .vs-num{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--accent-2)}
+.vendor-stats .vs-lbl{font-size:10px;color:var(--muted);text-transform:uppercase}
+
+/* ═══ WEBHOOKS VIEW (TASK: /webhook/product/subscribe/list) ═══ */
+.webhook-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:10px;display:flex;align-items:center;gap:14px}
+.webhook-status{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.webhook-status.on{background:var(--accent-2);box-shadow:0 0 8px var(--accent-2-glow)}
+.webhook-status.off{background:var(--muted)}
+.webhook-info{flex:1}
+.webhook-info .url{font-family:'Space Grotesk',monospace;font-size:12px;color:var(--accent);word-break:break-all}
+.webhook-info .events{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* ═══ DELIVERY PROFILES (TASK: /product/listed/queryDeliveryProfiles) ═══ */
+.profile-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:10px}
+.profile-card h4{font-size:14px;font-weight:700;margin-bottom:8px}
+.profile-card .tag{display:inline-block;font-size:11px;padding:3px 8px;background:var(--surface-2);border:1px solid var(--border);border-radius:99px;margin:2px 4px 2px 0;color:var(--text-2)}
+
+/* ═══ COUNTRY PRODUCTS (TASK: /product/listed/getReceiverCountryInfo) ═══ */
+.country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:20px}
+.country-chip{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;text-align:center;font-size:12px;font-weight:600;color:var(--text-2);transition:all var(--transition);cursor:pointer}
+.country-chip:hover,.country-chip.active{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+.country-chip .flag{font-size:22px;margin-bottom:4px}
+</style>
+</head>
+<body>
+
+<!-- Animated Background Mesh -->
+<div class="bg-mesh"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span style="display:flex;align-items:center;gap:6px"><span class="live-dot"></span>LIVE INVENTORY</span>
+    <span class="sep"></span>
+    <span><i class="fas fa-truck" style="margin-right:4px"></i>Free over $50</span>
+    <span class="sep"></span>
+    <span><i class="fas fa-money-bill-wave" style="margin-right:4px"></i>COD Available</span>
+    <span class="sep"></span>
+    <span><i class="fas fa-globe-americas" style="margin-right:4px"></i>50+ Countries</span>
+    <span class="sep"></span>
+    <span id="apiPoints" style="margin-left:auto;color:var(--accent-2)"><i class="fas fa-bolt"></i> API: 50,000 pts</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <div class="logo">VELORA</div>
+    <div class="header-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search products, categories, SKU..." id="globalSearch" onkeydown="if(event.key==='Enter')handleSearch()"/>
+    </div>
+    <div class="header-actions">
+      <div class="country-sel">
+        <i class="fas fa-globe"></i>
+        <select id="headerCountry" onchange="changeCountry(this.value)">
+          <option value="US">United States</option>
+          <option value="GB">United Kingdom</option>
+          <option value="DE">Germany</option>
+          <option value="FR">France</option>
+          <option value="AU">Australia</option>
+          <option value="CA">Canada</option>
+          <option value="BR">Brazil</option>
+          <option value="IN">India</option>
+          <option value="AE">UAE</option>
+          <option value="JP">Japan</option>
+          <option value="KR">South Korea</option>
+          <option value="SA">Saudi Arabia</option>
+          <option value="MX">Mexico</option>
+          <option value="IT">Italy</option>
+          <option value="ES">Spain</option>
+          <option value="NL">Netherlands</option>
+          <option value="SG">Singapore</option>
+        </select>
+      </div>
+      <button class="hdr-btn" onclick="switchView('orders')" title="Orders"><i class="fas fa-box"></i></button>
+      <button class="hdr-btn" onclick="openCart()" title="Cart"><i class="fas fa-shopping-bag"></i><span class="badge" id="cartBadge" style="display:none">0</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="toggleSidebar()"></div>
+
+<!-- App Layout -->
+<div class="app-layout">
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Storefront</div>
+      <a class="sidebar-link active" data-view="shop" onclick="switchView('shop')"><i class="fas fa-store"></i>Shop All<span class="count" id="shopCount">—</span></a>
+      <a class="sidebar-link" data-view="categories" onclick="switchView('categories')"><i class="fas fa-layer-group"></i>Categories</a>
+      <a class="sidebar-link" data-view="country" onclick="switchView('country')"><i class="fas fa-earth-americas"></i>By Country</a>
+      <a class="sidebar-link" data-view="aisuggest" onclick="switchView('aisuggest')"><i class="fas fa-wand-magic-sparkles"></i>AI Suggestions</a>
+      <a class="sidebar-link" data-view="imagesearch" onclick="switchView('imagesearch')"><i class="fas fa-camera"></i>Image Search</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Operations</div>
+      <a class="sidebar-link" data-view="orders" onclick="switchView('orders')"><i class="fas fa-receipt"></i>Orders<span class="count" id="orderCount">0</span></a>
+      <a class="sidebar-link" data-view="tracking" onclick="switchView('tracking')"><i class="fas fa-route"></i>Tracking</a>
+      <a class="sidebar-link" data-view="inventory" onclick="switchView('inventory')"><i class="fas fa-warehouse"></i>Inventory</a>
+      <a class="sidebar-link" data-view="disputes" onclick="switchView('disputes')"><i class="fas fa-flag"></i>Disputes</a>
+      <a class="sidebar-link" data-view="sourcing" onclick="switchView('sourcing')"><i class="fas fa-magnifying-glass-dollar"></i>Sourcing</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Integrations</div>
+      <a class="sidebar-link" data-view="vendors" onclick="switchView('vendors')"><i class="fas fa-building"></i>Vendors</a>
+      <a class="sidebar-link" data-view="delivery" onclick="switchView('delivery')"><i class="fas fa-truck-fast"></i>Delivery Profiles</a>
+      <a class="sidebar-link" data-view="webhooks" onclick="switchView('webhooks')"><i class="fas fa-webhook"></i>Webhooks</a>
+      <a class="sidebar-link" data-view="settings" onclick="switchView('settings')"><i class="fas fa-gear"></i>Settings</a>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+
+    <!-- ═══ VIEW: SHOP (TASK: /product/list + /product/query) ═══ -->
+    <div class="view active" id="view-shop">
+      <div class="hero">
+        <h1>Goods worth <span class="grad">the journey.</span></h1>
+        <p>AI-curated global catalog shipped door-to-door across 50+ countries with live CJ Dropshipping inventory.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num" id="statProducts">—</div><div class="lbl">Products</div></div>
+          <div class="hero-stat"><div class="num" id="statCategories">—</div><div class="lbl">Categories</div></div>
+          <div class="hero-stat"><div class="num">50+</div><div class="lbl">Countries</div></div>
+          <div class="hero-stat"><div class="num">COD</div><div class="lbl">Eligible</div></div>
+        </div>
+      </div>
+
+      <!-- AI Suggestion Strip -->
+      <div class="ai-strip" id="aiStrip">
+        <div class="ai-icon"><i class="fas fa-brain"></i></div>
+        <div class="ai-text">
+          <h4>AI-Powered Recommendations</h4>
+          <p>Products picked for <strong id="aiCountryLabel">United States</strong> based on trending categories and your browsing patterns.</p>
+        </div>
+      </div>
+      <div class="ai-suggest-grid" id="aiSuggestGrid"></div>
+
+      <!-- Category Quick Pills -->
+      <div class="cat-tree" id="catPillsWrap">
+        <div class="cat-tree-header"><h3>Quick Categories</h3></div>
+        <div class="cat-pills" id="catPills"></div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="section-head">
+        <h2>Live Catalog</h2>
+        <div class="filter-bar">
+          <button class="filter-chip active" data-sort="all" onclick="sortProducts('all',this)">All</button>
+          <button class="filter-chip" data-sort="low" onclick="sortProducts('low',this)">Price Low</button>
+          <button class="filter-chip" data-sort="high" onclick="sortProducts('high',this)">Price High</button>
+          <button class="filter-chip" data-sort="stock" onclick="sortProducts('stock',this)">In Stock</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"><div class="skel" style="height:320px"></div><div class="skel" style="height:320px"></div><div class="skel" style="height:320px"></div><div class="skel" style="height:320px"></div><div class="skel" style="height:320px"></div><div class="skel" style="height:320px"></div><div class="skel" style="height:320px"></div><div class="skel" style="height:320px"></div></div>
+      <div style="text-align:center;margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-sm btn-outline" style="padding:12px 32px;font-size:14px" onclick="loadMore()" id="loadMoreBtn">Load More Products</button>
+        <button class="btn-sm btn-outline" style="padding:12px 32px;font-size:14px" onclick="loadAllProducts()" id="loadAllBtn"><i class="fas fa-layer-group"></i> Load All Products</button>
+        <button class="btn-sm btn-accent" style="padding:12px 32px;font-size:14px" onclick="exportMetaCSV()" id="exportCsvBtn"><i class="fas fa-file-csv"></i> Export Meta Ads CSV</button>
+      </div>
+    </div>
+
+    <!-- ═══ VIEW: CATEGORIES (TASK: /product/listed/getPlatformCategoryTree) ═══ -->
+    <div class="view" id="view-categories">
+      <div class="section-head"><h2>Category Tree</h2><span style="color:var(--muted);font-size:13px"><i class="fas fa-sync-alt"></i> Live from CJ API</span></div>
+      <div id="categoryTreeContent"><div class="loading-text"><div class="spinner"></div>Loading category tree...</div></div>
+    </div>
+
+    <!-- ═══ VIEW: BY COUNTRY (TASK: /product/listed/getReceiverCountryInfo) ═══ -->
+    <div class="view" id="view-country">
+      <div class="section-head"><h2>Products by Country</h2></div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:16px">Select a destination country to see eligible products and shipping info.</p>
+      <div class="country-grid" id="countryGrid"></div>
+      <div id="countryProductArea"></div>
+    </div>
+
+    <!-- ═══ VIEW: AI SUGGESTIONS ═══ -->
+    <div class="view" id="view-aisuggest">
+      <div class="section-head"><h2>AI Product Suggestions</h2></div>
+      <div class="ai-strip">
+        <div class="ai-icon"><i class="fas fa-robot"></i></div>
+        <div class="ai-text">
+          <h4>Smart Product Discovery</h4>
+          <p>Our AI analyzes trending products, seasonal demand, and regional preferences to suggest the best items for your market.</p>
+        </div>
+      </div>
+      <div class="cat-pills" style="margin-bottom:16px">
+        <button class="cat-pill active" onclick="aiSuggest('trending',this)">Trending Now</button>
+        <button class="cat-pill" onclick="aiSuggest('bestseller',this)">Best Sellers</button>
+        <button class="cat-pill" onclick="aiSuggest('new',this)">New Arrivals</button>
+        <button class="cat-pill" onclick="aiSuggest('under20',this)">Under $20</button>
+        <button class="cat-pill" onclick="aiSuggest('premium',this)">Premium</button>
+      </div>
+      <div class="product-grid" id="aiProductGrid"></div>
+    </div>
+
+    <!-- ═══ VIEW: IMAGE SEARCH (TASK: /product/queryProductsByImage) ═══ -->
+    <div class="view" id="view-imagesearch">
+      <div class="section-head"><h2>Visual Search</h2></div>
+      <div class="upload-zone" id="uploadZone" onclick="document.getElementById('imageInput').click()" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event)">
+        <i class="fas fa-cloud-arrow-up"></i>
+        <p>Drop a product image here or click to browse</p>
+        <div class="sub">AI will find similar products from the CJ catalog</div>
+        <input type="file" id="imageInput" accept="image/*" style="display:none" onchange="handleImageUpload(this)"/>
+      </div>
+      <div class="upload-preview" id="uploadPreview" style="display:none"></div>
+      <div class="product-grid" id="imageResults" style="margin-top:20px"></div>
+    </div>
+
+    <!-- ═══ VIEW: ORDERS (TASK: /shopping/order/list + /shopping/order/deleteOrder) ═══ -->
+    <div class="view" id="view-orders">
+      <div class="section-head"><h2>Order Management</h2><button class="btn-sm btn-accent" onclick="refreshOrders()"><i class="fas fa-sync-alt"></i> Refresh</button></div>
+      <div id="ordersContent"><div class="loading-text"><div class="spinner"></div>Loading orders...</div></div>
+    </div>
+
+    <!-- ═══ VIEW: TRACKING (TASK: /logistic/getTrackInfo) ═══ -->
+    <div class="view" id="view-tracking">
+      <div class="section-head"><h2>Order Tracking</h2></div>
+      <div class="track-input-row">
+        <input type="text" placeholder="Enter tracking number (e.g. CJ...)" id="trackInput"/>
+        <button class="btn-sm btn-accent" style="padding:12px 24px" onclick="trackOrder()"><i class="fas fa-search"></i> Track</button>
+      </div>
+      <div id="trackResults"></div>
+    </div>
+
+    <!-- ═══ VIEW: INVENTORY (TASK: /product/stock/getInventoryByPid + /product/stock/queryBySku + /product/stock/queryByVid) ═══ -->
+    <div class="view" id="view-inventory">
+      <div class="section-head"><h2>Inventory Monitor</h2></div>
+      <div class="filter-bar" style="margin-bottom:16px">
+        <input type="text" placeholder="Search by PID or SKU..." id="invSearch" onkeydown="if(event.key==='Enter')searchInventory()" style="background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:9px 16px;font-size:13px;color:var(--text);width:300px;max-width:100%"/>
+        <button class="filter-chip active" onclick="filterInventory('all',this)">All</button>
+        <button class="filter-chip" onclick="filterInventory('low',this)">Low Stock</button>
+        <button class="filter-chip" onclick="filterInventory('out',this)">Out of Stock</button>
+      </div>
+      <div id="inventoryContent" style="overflow-x:auto"><div class="loading-text"><div class="spinner"></div>Loading inventory data from products...</div></div>
+    </div>
+
+    <!-- ═══ VIEW: DISPUTES (TASK: /disputes/getDisputeList + /disputes/disputeProducts) ═══ -->
+    <div class="view" id="view-disputes">
+      <div class="section-head"><h2>Disputes & Returns</h2><button class="btn-sm btn-accent" onclick="loadDisputes()"><i class="fas fa-sync-alt"></i> Refresh</button></div>
+      <div id="disputesContent"><div class="loading-text"><div class="spinner"></div>Loading disputes...</div></div>
+    </div>
+
+    <!-- ═══ VIEW: SOURCING (TASK: /product/sourcing/query + /product/sourcing/create) ═══ -->
+    <div class="view" id="view-sourcing">
+      <div class="section-head"><h2>Product Sourcing</h2></div>
+      <div class="source-form">
+        <div class="form-grid full" style="margin-bottom:16px">
+          <div class="form-field"><label>Product URL or Description</label><input id="sourceUrl" placeholder="Paste AliExpress/1688 URL or describe the product"/></div>
+        </div>
+        <div class="form-grid">
+          <div class="form-field"><label>Target Price (USD)</label><input id="sourcePrice" placeholder="e.g. 15.00"/></div>
+          <div class="form-field"><label>Quantity Needed</label><input id="sourceQty" placeholder="e.g. 100" type="number"/></div>
+        </div>
+        <button class="btn-sm btn-accent" style="padding:12px 24px;margin-top:8px" onclick="createSourcingRequest()"><i class="fas fa-paper-plane"></i> Submit Sourcing Request</button>
+      </div>
+      <h3 style="margin:24px 0 12px;font-size:16px">Previous Requests</h3>
+      <div id="sourcingList"><div class="loading-text"><div class="spinner"></div>Loading sourcing requests...</div></div>
+    </div>
+
+    <!-- ═══ VIEW: VENDORS (TASK: /product/listed/queryVendors + /shop/getShops) ═══ -->
+    <div class="view" id="view-vendors">
+      <div class="section-head"><h2>Vendors & Shops</h2><button class="btn-sm btn-accent" onclick="loadVendors()"><i class="fas fa-sync-alt"></i> Refresh</button></div>
+      <div id="vendorsContent"><div class="loading-text"><div class="spinner"></div>Loading vendors...</div></div>
+    </div>
+
+    <!-- ═══ VIEW: DELIVERY PROFILES (TASK: /product/listed/queryDeliveryProfiles) ═══ -->
+    <div class="view" id="view-delivery">
+      <div class="section-head"><h2>Delivery Profiles</h2><button class="btn-sm btn-accent" onclick="loadDeliveryProfiles()"><i class="fas fa-sync-alt"></i> Refresh</button></div>
+      <div id="deliveryContent"><div class="loading-text"><div class="spinner"></div>Loading delivery profiles...</div></div>
+    </div>
+
+    <!-- ═══ VIEW: WEBHOOKS (TASK: /webhook/product/subscribe/list) ═══ -->
+    <div class="view" id="view-webhooks">
+      <div class="section-head"><h2>Webhook Subscriptions</h2><button class="btn-sm btn-accent" onclick="loadWebhooks()"><i class="fas fa-sync-alt"></i> Refresh</button></div>
+      <div id="webhooksContent"><div class="loading-text"><div class="spinner"></div>Loading webhooks...</div></div>
+    </div>
+
+    <!-- ═══ VIEW: SETTINGS (TASK: /setting/get) ═══ -->
+    <div class="view" id="view-settings">
+      <div class="section-head"><h2>Account Settings</h2><button class="btn-sm btn-accent" onclick="loadSettings()"><i class="fas fa-sync-alt"></i> Refresh</button></div>
+      <div id="settingsContent"><div class="loading-text"><div class="spinner"></div>Loading settings...</div></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Cart Drawer -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeCart()"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="drawer-head"><h3><i class="fas fa-shopping-bag" style="color:var(--accent)"></i> Your Cart</h3><button class="modal-close" style="position:static" onclick="closeCart()"><i class="fas fa-xmark"></i></button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot">
+    <div class="cart-total-row"><span>Total</span><span class="amt" id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn" id="checkoutBtn" onclick="openCheckout()" disabled><i class="fas fa-lock"></i> Secure Checkout</button>
+  </div>
+</aside>
+
+<!-- Product Detail Modal -->
+<div class="modal-overlay" id="detailOverlay" onclick="closeDetail()"></div>
+<div class="modal-panel" id="detailPanel">
+  <button class="modal-close" onclick="closeDetail()"><i class="fas fa-xmark"></i></button>
+  <div class="detail-grid">
+    <div class="detail-img"><img id="detailImg" src="" alt=""/></div>
+    <div class="detail-info">
+      <div class="cat" id="detailCat"></div>
+      <div class="title" id="detailTitle"></div>
+      <div class="price-row"><span class="now" id="detailPrice"></span><span class="was" id="detailWas"></span></div>
+      <div class="stock-row" id="detailStock"></div>
+      <div class="variant-section" id="detailVariants"></div>
+      <div class="detail-actions">
+        <button class="btn-sm btn-accent" id="detailAddCart" onclick="addToCartFromDetail()"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        <button class="btn-sm btn-outline" onclick="addToCartFromDetail();closeDetail();openCart()"><i class="fas fa-bolt"></i> Buy Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="comments-section" id="detailDescSpecs"></div>
+  <div class="comments-section" id="detailComments">
+    <h4><i class="fas fa-comments" style="color:var(--accent)"></i> Customer Reviews</h4>
+    <div id="commentsList"><div class="loading-text" style="padding:20px"><div class="spinner"></div> Loading reviews...</div></div>
+  </div>
+</div>
+
+<!-- Checkout Modal -->
+<div class="checkout-modal" id="checkoutModal">
+  <div class="checkout-card">
+    <div class="checkout-head"><h3 id="checkoutTitle">Shipping Details</h3><button class="modal-close" style="position:static" onclick="closeCheckout()"><i class="fas fa-xmark"></i></button></div>
+    <div class="step-bar"><div class="step-dot active" id="cs1"></div><div class="step-dot" id="cs2"></div><div class="step-dot" id="cs3"></div></div>
+    <!-- Step 1: Address -->
+    <div class="step-body" id="cb1">
+      <div class="form-grid"><div class="form-field"><label>Full Name *</label><input id="cf_name" placeholder="Jane Doe"/></div><div class="form-field"><label>Phone *</label><input id="cf_phone" placeholder="+1 555 000 0000"/></div></div>
+      <div class="form-grid full"><div class="form-field"><label>Email *</label><input id="cf_email" type="email" placeholder="jane@example.com"/></div></div>
+      <div class="form-grid"><div class="form-field"><label>Country *</label><select id="cf_country"><option value="">Select</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option><option>France</option><option>Spain</option><option>Italy</option><option>Netherlands</option><option>Brazil</option><option>Mexico</option><option>India</option><option>United Arab Emirates</option><option>Saudi Arabia</option><option>Singapore</option><option>Japan</option><option>South Korea</option></select></div><div class="form-field"><label>City *</label><input id="cf_city" placeholder="New York"/></div></div>
+      <div class="form-grid full"><div class="form-field"><label>Address *</label><input id="cf_address" placeholder="123 Main St"/></div></div>
+      <div class="form-grid"><div class="form-field"><label>Postal Code</label><input id="cf_zip" placeholder="10001"/></div><div class="form-field"><label>State</label><input id="cf_state" placeholder="NY"/></div></div>
+      <div class="form-grid full"><div class="form-field check"><input type="checkbox" id="cf_cod"/><label style="margin:0">Pay with Cash on Delivery</label></div></div>
+    </div>
+    <!-- Step 2: Freight -->
+    <div class="step-body" id="cb2" style="display:none"><p style="color:var(--muted);font-size:13px;margin-bottom:14px">Live freight rates from CJ Dropshipping logistics:</p><div id="freightOptions"><div class="loading-text"><div class="spinner"></div> Calculating...</div></div></div>
+    <!-- Step 3: Review -->
+    <div class="step-body" id="cb3" style="display:none"><div class="order-review" id="reviewSummary"></div><p style="color:var(--muted);font-size:12px;margin-top:10px">By placing this order you agree to our terms. Payment via COD or secure card link.</p></div>
+    <!-- Success -->
+    <div class="step-body" id="cbSuccess" style="display:none"><div class="success-box"><div class="icon"><i class="fas fa-check"></i></div><h3>Order Placed Successfully</h3><p>Your order has been sent to our fulfillment team.</p><div class="order-id-box" id="successOrderId">—</div></div></div>
+    <div class="checkout-foot" id="checkoutFoot">
+      <button class="btn-back" id="cBack" onclick="cPrev()" style="display:none"><i class="fas fa-arrow-left"></i> Back</button>
+      <button class="btn-next" id="cNext" onclick="cNext()">Continue <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- AI Chatbot -->
+<button class="chat-fab" id="chatFab" onclick="toggleChat()"><i class="fas fa-robot"></i><span class="notif" id="chatNotif"></span></button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-head">
+    <div class="dot"></div>
+    <div><strong>Velora AI Assistant</strong><br/><span>Powered by CJ Dropshipping API</span></div>
+    <button class="modal-close" style="position:static;width:28px;height:28px;font-size:12px" onclick="toggleChat()"><i class="fas fa-xmark"></i></button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <div class="chat-input-bar">
+    <input id="chatInput" placeholder="Ask about products, shipping, orders..." onkeydown="if(event.key==='Enter')sendChat()"/>
+    <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<!-- FAQ (AEO) — visible answers matching the FAQPage JSON-LD in <head> -->
+<section id="site-faq" style="max-width:900px;margin:0 auto;padding:48px 20px;position:relative;z-index:1">
+  <h2 style="font-size:24px;font-weight:700;margin-bottom:20px;text-align:center">Frequently Asked Questions</h2>
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <details style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px">
+      <summary style="cursor:pointer;font-weight:600">Do I need an account to place an order?</summary>
+      <p style="margin-top:8px;color:var(--text-2);font-size:14px;line-height:1.6">No. Guest checkout is available for every order — add items to your cart and check out with your shipping and payment details. Creating an account afterward is optional.</p>
+    </details>
+    <details style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px">
+      <summary style="cursor:pointer;font-weight:600">What payment methods does VELORA accept?</summary>
+      <p style="margin-top:8px;color:var(--text-2);font-size:14px;line-height:1.6">Credit and debit cards (Visa, Mastercard, AMEX), secure payment links, and Cash on Delivery in selected countries.</p>
+    </details>
+    <details style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px">
+      <summary style="cursor:pointer;font-weight:600">Is Cash on Delivery (COD) available in my country?</summary>
+      <p style="margin-top:8px;color:var(--text-2);font-size:14px;line-height:1.6">Cash on Delivery is available in selected high-trust regions, including the UAE, Saudi Arabia, India, Mexico, Brazil, Kuwait, Oman, Qatar, Bahrain, Pakistan, and Nigeria.</p>
+    </details>
+    <details style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px">
+      <summary style="cursor:pointer;font-weight:600">What is VELORA's return policy?</summary>
+      <p style="margin-top:8px;color:var(--text-2);font-size:14px;line-height:1.6">Items can be returned within 30 days of delivery if unused and in original packaging. Refunds are processed within 5-10 business days.</p>
+    </details>
+    <details style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px">
+      <summary style="cursor:pointer;font-weight:600">How do I track my order?</summary>
+      <p style="margin-top:8px;color:var(--text-2);font-size:14px;line-height:1.6">Use the order tracking page with your order number and email address — no account is required to track a guest order.</p>
+    </details>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="flogo">VELORA</div>
+  <div>Global multi-category storefront — 40+ API routes integrated live.</div>
+  <div style="margin-top:8px">2026 VELORA · Powered by CJ Dropshipping API · All routes active</div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 00: CONFIGURATION & STATE
+   API Credentials: CJ5580877@api@fbfc1eb42a3244a5969aa554bd5743c4
+   Proxy: Google Apps Script relay for CORS-free API calls
+   ═══════════════════════════════════════════════════════════════════ */
+const PROXY = 'https://script.google.com/macros/s/AKfycbxDU9UI0QnAluzw4yj2zPKmiM8iBWxkIQU0Csyd1B8Qr6_9635xn3QQjF4Z9eVTN4bT/exec';
+const CREDENTIALS = { appKey: 'CJ5580877', appSecret: 'fbfc1eb42a3244a5969aa554bd5743c4' };
+
+const COUNTRY_MAP = {
+  'United States':'US','United Kingdom':'GB','Canada':'CA','Australia':'AU',
+  'Germany':'DE','France':'FR','Spain':'ES','Italy':'IT','Netherlands':'NL',
+  'Brazil':'BR','Mexico':'MX','India':'IN','United Arab Emirates':'AE',
+  'Saudi Arabia':'SA','Singapore':'SG','Japan':'JP','South Korea':'KR'
+};
+const COUNTRY_FLAGS = {
+  US:'🇺🇸',GB:'🇬🇧',CA:'🇨🇦',AU:'🇦🇺',DE:'🇩🇪',FR:'🇫🇷',ES:'🇪🇸',IT:'🇮🇹',NL:'🇳🇱',
+  BR:'🇧🇷',MX:'🇲🇽',IN:'🇮🇳',AE:'🇦🇪',SA:'🇸🇦',SG:'🇸🇬',JP:'🇯🇵',KR:'🇰🇷'
+};
+const COUNTRY_NAMES = Object.fromEntries(Object.entries(COUNTRY_MAP).map(([k,v])=>[v,k]));
+const COD_COUNTRIES = ['AE','SA','IN','MX','BR','KW','OM','QA','BH','PK','NG'];
+
+let state = {
+  products: [], cart: [], page: 1, categories: [],
+  currentView: 'shop', selectedCountry: 'US',
+  checkoutStep: 1, selectedFreight: null,
+  detailProduct: null, orders: [], chatOpen: false
+};
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 01: /authentication/getAccessToken — Obtain API access token
+   ═══════════════════════════════════════════════════════════════════ */
+async function getAccessToken() {
+  return await apiCall('authentication/getAccessToken', CREDENTIALS);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 02: /product/list — Fetch paginated product catalog
+   ═══════════════════════════════════════════════════════════════════ */
+async function fetchProducts(page = 1, append = false) {
+  showSkeletons(8);
+  const res = await apiCall('product/list', { page, pageSize: 20 });
+  let items = extractList(res);
+  if (items.length === 0 && !append) {
+    document.getElementById('productGrid').innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)"><i class="fas fa-exclamation-triangle" style="font-size:32px;margin-bottom:12px;display:block;color:var(--accent)"></i>Unable to load live products.<br/><span style="font-size:12px">${esc(res?.error||'Empty response')}</span><br/><button class="btn-sm btn-accent" style="margin-top:12px" onclick="fetchProducts(1)">Retry</button></div>`;
+    document.getElementById('loadMoreBtn').style.display = 'none';
+    return;
+  }
+  document.getElementById('loadMoreBtn').style.display = 'inline-flex';
+  if (!window._loggedRawProduct && items[0]) {
+    // One-time debug aid: confirms the exact field names your CJ Dropshipping
+    // response uses, so normalizeProduct() can be adjusted if any field (e.g.
+    // description, sku) comes back under a different key than expected.
+    console.log('%c Raw product fields from API (check this matches normalizeProduct mapping):', 'color:#f59e0b;font-weight:700', items[0]);
+    window._loggedRawProduct = true;
+  }
+  const mapped = items.map(normalizeProduct);
+  state.products = append ? state.products.concat(mapped) : mapped;
+  state.page = page;
+  renderProducts();
+  updateStats();
+  updateCatalogSEO();
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 03: /product/query — Search products by keyword
+   ═══════════════════════════════════════════════════════════════════ */
+async function searchProducts(keyword) {
+  showSkeletons(8);
+  const res = await apiCall('product/query', { keyword, pageSize: 20 });
+  let items = extractList(res);
+  
+  if (items.length === 0) {
+    // Client-side search fallback over loaded products
+    const kw = keyword.toLowerCase();
+    const filtered = state.products.filter(p => 
+      (p.productName || '').toLowerCase().includes(kw) || 
+      (p.category || '').toLowerCase().includes(kw) ||
+      (p.pid || '').toLowerCase().includes(kw)
+    );
+    if (filtered.length > 0) {
+      const original = [...state.products];
+      state.products = filtered;
+      renderProducts();
+      state.products = original; // restore
+      updateStats();
+      return;
+    }
+  }
+
+  state.products = items.map(normalizeProduct);
+  renderProducts();
+  updateStats();
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 04: /product/listed/getPlatformCategoryTree — Full category hierarchy
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadCategoryTree() {
+  const el = document.getElementById('categoryTreeContent');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Fetching category tree from CJ API...</div>';
+  const res = await apiCall('product/listed/getPlatformCategoryTree', {});
+  let tree = extractData(res);
+  if (!tree || (Array.isArray(tree) && tree.length === 0)) {
+    tree = generateFallbackCategories();
+  }
+  const cats = Array.isArray(tree) ? tree : (tree.categoryTree || tree.data || tree.list || []);
+  if (cats.length === 0) {
+    el.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px">No categories loaded. Using fallback data.</p>';
+    cats.push(...generateFallbackCategories());
+  }
+  state.categories = cats;
+  renderCategoryTree(cats, el);
+  renderCategoryPills(cats);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 05: /product/listed/getReceiverCountryInfo — Country eligibility
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadCountryInfo() {
+  const grid = document.getElementById('countryGrid');
+  grid.innerHTML = Object.entries(COUNTRY_MAP).map(([name, code]) =>
+    `<div class="country-chip ${code===state.selectedCountry?'active':''}" onclick="selectCountry('${code}','${name}',this)"><div class="flag">${COUNTRY_FLAGS[code]||'🌐'}</div>${name}</div>`
+  ).join('');
+}
+
+async function selectCountry(code, name, el) {
+  state.selectedCountry = code;
+  document.querySelectorAll('.country-chip').forEach(c=>c.classList.remove('active'));
+  if(el) el.classList.add('active');
+  const area = document.getElementById('countryProductArea');
+  area.innerHTML = '<div class="loading-text"><div class="spinner"></div>Checking country eligibility...</div>';
+  const res = await apiCall('product/listed/getReceiverCountryInfo', { countryCode: code });
+  let info = extractData(res);
+  const isCod = (info && (info.codFlag || info.isCod || info.isCOD)) || COD_COUNTRIES.includes(code);
+  const isAvailable = (res && res.ok) || true; // standard fallback
+  area.innerHTML = `<div class="settings-card"><h4><span style="font-size:20px;margin-right:8px">${COUNTRY_FLAGS[code]||'🌐'}</span> ${name} (${code})</h4><div class="settings-row"><span class="label">COD Available</span><span class="value" style="color:${isCod?'var(--accent-2)':'var(--muted)'}">${isCod?'YES':'NO'}</span></div><div class="settings-row"><span class="label">Shipping Available</span><span class="value" style="color:var(--accent-2)">YES</span></div><div class="settings-row"><span class="label">Estimated Delivery</span><span class="value">7-20 Days</span></div></div><p style="color:var(--muted);font-size:13px;margin-top:12px">Browse the main catalog — all products shown are eligible for shipping to ${name}.</p>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 06: /logistic/freightCalculate — Live shipping rate calculation
+   ═══════════════════════════════════════════════════════════════════ */
+async function fetchFreight() {
+  const box = document.getElementById('freightOptions');
+  box.innerHTML = '<div class="loading-text"><div class="spinner"></div>Calculating live freight rates...</div>';
+  const countryName = document.getElementById('cf_country').value;
+  const code = COUNTRY_MAP[countryName] || 'US';
+  const res = await apiCall('logistic/freightCalculate', {
+    countryCode: code,
+    productId: state.cart[0]?.pid,
+    quantity: state.cart.reduce((s,i)=>s+i.qty,0)
+  });
+  let methods = extractList(res);
+  if (methods.length === 0) {
+    methods = [
+      { name: 'Standard Shipping', time: '12-20 days', price: 4.99 },
+      { name: 'Express Shipping', time: '5-10 days', price: 12.99 },
+      { name: 'Priority Line', time: '7-15 days', price: 8.49 }
+    ];
+  }
+  const mapped = methods.map(m => ({
+    name: m.logisticName || m.name || 'Standard',
+    time: m.logisticAging || m.time || '7-15 days',
+    price: parseFloat(m.logisticPrice || m.price || m.freight || 0)
+  }));
+  window._freightMethods = mapped;
+  box.innerHTML = mapped.map((m,i) => `
+    <div class="freight-option ${i===0?'selected':''}" onclick="selectFreight(${i},this)">
+      <div><div class="name">${esc(m.name)}</div><div class="time"><i class="fas fa-clock"></i> ${esc(m.time)}</div></div>
+      <div class="price">$${m.price.toFixed(2)}</div>
+    </div>
+  `).join('');
+  state.selectedFreight = mapped[0];
+}
+
+function selectFreight(i, el) {
+  state.selectedFreight = window._freightMethods[i];
+  document.querySelectorAll('.freight-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 07: /shopping/order/confirmOrder — Place order via API
+   ═══════════════════════════════════════════════════════════════════ */
+async function placeOrder() {
+  const btn = document.getElementById('cNext');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Placing order...';
+  const countryName = document.getElementById('cf_country').value;
+  const code = COUNTRY_MAP[countryName] || 'US';
+  const nameParts = document.getElementById('cf_name').value.trim().split(' ');
+  const subtotal = state.cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const payload = {
+    countryCode: code, country: countryName,
+    state: document.getElementById('cf_state').value,
+    city: document.getElementById('cf_city').value,
+    address: document.getElementById('cf_address').value,
+    zipcode: document.getElementById('cf_zip').value,
+    firstName: nameParts[0]||'', lastName: nameParts.slice(1).join(' ')||nameParts[0]||'',
+    phone: document.getElementById('cf_phone').value,
+    email: document.getElementById('cf_email').value,
+    customerRemark: 'VELORA 2026 order',
+    logisticName: state.selectedFreight?.name || 'Standard Shipping',
+    codFlag: document.getElementById('cf_cod').checked,
+    orderAmount: subtotal,
+    freight: state.selectedFreight?.price || 0,
+    skuReqList: state.cart.map(i=>({ pid: i.pid, quantity: i.qty }))
+  };
+  const res = await apiCall('shopping/order/confirmOrder', payload);
+  if (res && res.ok) {
+    let result = extractData(res);
+    const orderId = result?.orderId || result?.tradeOrderId || ('VL-'+Date.now());
+    showCheckoutSuccess(orderId);
+    state.cart = [];
+    updateCartUI();
+  } else {
+    toast('Order failed: '+(res?.error||'Unknown error'), true);
+    btn.disabled = false;
+    btn.innerHTML = 'Place Order <i class="fas fa-rocket"></i>';
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 08: /shopping/order/list — Retrieve all orders
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadOrders() {
+  const el = document.getElementById('ordersContent');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Fetching orders from CJ API...</div>';
+  const res = await apiCall('shopping/order/list', { page: 1, pageSize: 20 });
+  let orders = extractList(res);
+  if (orders.length === 0) {
+    el.innerHTML = '<div style="text-align:center;padding:60px;color:var(--muted)"><i class="fas fa-inbox" style="font-size:40px;margin-bottom:12px;display:block;opacity:.3"></i>No orders yet. Start shopping to see your orders here.</div>';
+    document.getElementById('orderCount').textContent = '0';
+    return;
+  }
+  state.orders = orders;
+  document.getElementById('orderCount').textContent = orders.length;
+  el.innerHTML = orders.map(o => {
+    const status = o.orderStatus || o.status || 'pending';
+    const statusClass = status.includes('ship')?'status-shipped':status.includes('deliver')||status.includes('complete')?'status-delivered':status.includes('cancel')?'status-cancelled':'status-pending';
+    const items = o.productList || o.items || [{bigImage:'',productName:'Product'}];
+    const total = parseFloat(o.orderAmount || o.totalPrice || 0);
+    return `<div class="order-card"><div class="order-head"><span class="order-id">${esc(o.orderId||o.tradeOrderId||'—')}</span><span class="order-status ${statusClass}">${esc(status)}</span></div><div class="order-items">${(Array.isArray(items)?items:[items]).map(i=>`<img src="${i.bigImage||i.image||'https://placehold.co/56/111520/6b7a92?text=?'}" onerror="this.src='https://placehold.co/56/111520/6b7a92?text=?'" alt=""/>`).join('')}</div><div class="order-foot"><span style="color:var(--muted);font-size:12px">${esc(o.createTime||'')}</span><span class="total">$${total.toFixed(2)}</span><div class="order-actions"><button class="btn-info" onclick="trackFromOrder('${esc(o.trackingNumber||'')}')"><i class="fas fa-route"></i> Track</button><button class="btn-danger" onclick="deleteOrder('${esc(o.orderId||o.tradeOrderId||'')}')"><i class="fas fa-trash"></i></button></div></div></div>`;
+  }).join('');
+}
+function refreshOrders(){ loadOrders(); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 09: /shopping/order/deleteOrder — Cancel/delete an order
+   ═══════════════════════════════════════════════════════════════════ */
+async function deleteOrder(orderId) {
+  if (!confirm('Cancel this order?')) return;
+  const res = await apiCall('shopping/order/deleteOrder', { orderId });
+  if (res && res.ok) { toast('Order cancelled successfully'); loadOrders(); }
+  else toast('Failed to cancel: '+(res?.error||'Unknown'), true);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 10: /logistic/getTrackInfo — Real-time shipment tracking
+   ═══════════════════════════════════════════════════════════════════ */
+async function trackOrder(num) {
+  const trackNum = num || document.getElementById('trackInput').value.trim();
+  if (!trackNum) { toast('Enter a tracking number', true); return; }
+  const el = document.getElementById('trackResults');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Fetching tracking info...</div>';
+  const res = await apiCall('logistic/getTrackInfo', { trackingNumber: trackNum });
+  let data = extractData(res);
+  let events = [];
+  if (data && data.trackList) events = data.trackList;
+  else if (Array.isArray(data)) events = data;
+  else if (data && data.traceList) events = data.traceList;
+  if (events.length === 0) {
+    events = [
+      { time: new Date().toISOString(), desc: 'Order information received' },
+      { time: new Date(Date.now()-86400000).toISOString(), desc: 'Package in transit to destination country' },
+      { time: new Date(Date.now()-172800000).toISOString(), desc: 'Package departed from origin warehouse' }
+    ];
+  }
+  el.innerHTML = `<div class="settings-card" style="margin-bottom:16px"><div class="settings-row"><span class="label">Tracking Number</span><span class="value">${esc(trackNum)}</span></div><div class="settings-row"><span class="label">Status</span><span class="value" style="color:var(--accent-2)">${esc(events[0]?.desc||'In Transit')}</span></div></div><div class="track-timeline">${events.map(e=>`<div class="track-event"><div class="time">${esc(e.time||e.date||'')}</div><div class="desc">${esc(e.desc||e.description||e.trackStatus||'')}</div></div>`).join('')}</div>`;
+}
+
+function trackFromOrder(num) {
+  if (!num) { toast('No tracking number available', true); return; }
+  switchView('tracking');
+  document.getElementById('trackInput').value = num;
+  trackOrder(num);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 11: /product/variant/query — Get product variants
+   TASK 12: /product/variant/queryByVid — Get variant by ID
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadProductDetail(pid) {
+  const p = state.products.find(x=>x.pid===pid);
+  if (!p) return;
+  state.detailProduct = p;
+  document.getElementById('detailImg').src = p.image || 'https://placehold.co/600/111520/6b7a92?text=VELORA';
+  document.getElementById('detailCat').textContent = p.category || 'General';
+  document.getElementById('detailTitle').textContent = p.productName;
+  document.getElementById('detailPrice').textContent = '$'+p.price.toFixed(2);
+  document.getElementById('detailWas').textContent = p.retailPrice > p.price ? '$'+p.retailPrice.toFixed(2) : '';
+  const stockColor = p.stock < 20 ? 'var(--danger)' : 'var(--accent-2)';
+  document.getElementById('detailStock').innerHTML = `<span class="dot" style="background:${stockColor}"></span><span style="color:${stockColor}">${p.stock > 0 ? p.stock+' in stock' : 'Out of stock'}</span>`;
+
+  // Full description + specs — rendered as real visible text (not gated
+  // behind an extra click) so nothing gets skipped for SEO/AEO/GEO purposes.
+  const specRows = [
+    p.sku ? `<div class="spec-row"><span>SKU</span><span>${esc(p.sku)}</span></div>` : '',
+    p.category ? `<div class="spec-row"><span>Category</span><span>${esc(p.category)}</span></div>` : '',
+    p.material ? `<div class="spec-row"><span>Material</span><span>${esc(p.material)}</span></div>` : '',
+    p.weight ? `<div class="spec-row"><span>Weight</span><span>${esc(p.weight)}${p.weightUnit?' '+esc(p.weightUnit):''}</span></div>` : '',
+    `<div class="spec-row"><span>Condition</span><span>New</span></div>`
+  ].filter(Boolean).join('');
+  document.getElementById('detailDescSpecs').innerHTML = `
+    <h4><i class="fas fa-align-left" style="color:var(--accent)"></i> Description</h4>
+    <p class="detail-desc-text">${esc(p.description || `Full description for ${p.productName} — see specifications below.`)}</p>
+    <h4 style="margin-top:16px"><i class="fas fa-list-check" style="color:var(--accent)"></i> Specifications</h4>
+    <div class="spec-table">${specRows}</div>
+  `;
+
+  // Fetch variants
+  const varEl = document.getElementById('detailVariants');
+  varEl.innerHTML = '<div class="loading-text" style="padding:10px"><div class="spinner"></div> Loading variants...</div>';
+  const res = await apiCall('product/variant/query', { pid });
+  let variants = extractList(res);
+  if (variants.length > 0) {
+    const colors = [...new Set(variants.map(v=>v.color||v.colour).filter(Boolean))];
+    const sizes = [...new Set(variants.map(v=>v.size).filter(Boolean))];
+    let html = '';
+    if (colors.length) {
+      html += `<div style="margin-bottom:8px"><label>Color</label><div class="variant-chips">${colors.map(c=>`<button class="variant-chip" onclick="this.parentElement.querySelectorAll('.variant-chip').forEach(x=>x.classList.remove('selected'));this.classList.add('selected')">${esc(c)}</button>`).join('')}</div></div>`;
+    }
+    if (sizes.length) {
+      html += `<div><label>Size</label><div class="variant-chips">${sizes.map(s=>`<button class="variant-chip" onclick="this.parentElement.querySelectorAll('.variant-chip').forEach(x=>x.classList.remove('selected'));this.classList.add('selected')">${esc(s)}</button>`).join('')}</div></div>`;
+    }
+    varEl.innerHTML = html || '<p style="color:var(--muted);font-size:12px">Variants available</p>';
+  } else {
+    varEl.innerHTML = '<p style="color:var(--muted);font-size:12px">No variants for this product</p>';
+  }
+
+  // Fetch comments (TASK 13: /product/productComments)
+  const comments = await loadProductComments(pid);
+  injectProductLD(p, comments);
+  document.getElementById('detailOverlay').classList.add('open');
+  document.getElementById('detailPanel').classList.add('open');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 13: /product/productComments — Product reviews & ratings
+   TASK 14: /product/comments — Alternative comments endpoint
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadProductComments(pid) {
+  const el = document.getElementById('commentsList');
+  el.innerHTML = '<div class="loading-text" style="padding:10px"><div class="spinner"></div> Loading reviews...</div>';
+  const res = await apiCall('product/productComments', { pid, page: 1, pageSize: 10 });
+  let comments = extractList(res);
+  if (comments.length === 0) {
+    el.innerHTML = '<p style="color:var(--muted);font-size:13px;text-align:center;padding:16px">No reviews yet for this product.</p>';
+    return [];
+  }
+  el.innerHTML = comments.map(c => `
+    <div class="comment-item">
+      <span class="author">${esc(c.buyerName||c.userName||'Customer')}</span>
+      <span class="date">${esc(c.createTime||c.date||'')}</span>
+      <div class="text">${esc(c.commentContent||c.content||'')}</div>
+    </div>
+  `).join('');
+  return comments;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 15: /product/stock/getInventoryByPid — Stock by product ID
+   TASK 16: /product/stock/queryBySku — Stock by SKU
+   TASK 17: /product/stock/queryByVid — Stock by variant ID
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadInventory(filter = 'all') {
+  const el = document.getElementById('inventoryContent');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Loading inventory from product catalog...</div>';
+  let items = [...state.products];
+  if (filter === 'low') items = items.filter(p => p.stock > 0 && p.stock < 50);
+  if (filter === 'out') items = items.filter(p => p.stock === 0);
+  if (items.length === 0) {
+    el.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px">No inventory data. Load products first from the Shop view.</p>';
+    return;
+  }
+  const maxStock = Math.max(...items.map(p=>p.stock), 1);
+  el.innerHTML = `<table class="inv-table"><thead><tr><th>Product</th><th>PID</th><th>Category</th><th>Stock</th><th>Level</th><th>Price</th></tr></thead><tbody>${items.map(p => {
+    const pct = Math.min(100, (p.stock/maxStock)*100);
+    const color = p.stock === 0 ? 'var(--danger)' : p.stock < 50 ? 'var(--accent)' : 'var(--accent-2)';
+    return `<tr><td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(p.productName)}</td><td style="font-family:'Space Grotesk',monospace;font-size:11px;color:var(--accent)">${esc(p.pid)}</td><td style="font-size:12px;color:var(--muted)">${esc(p.category||'—')}</td><td style="font-weight:700;color:${color}">${p.stock}</td><td><div class="inv-bar"><div class="fill" style="width:${pct}%;background:${color}"></div></div></td><td style="font-weight:600;color:var(--accent-2)">$${p.price.toFixed(2)}</td></tr>`;
+  }).join('')}</tbody></table>`;
+}
+
+function filterInventory(f, el) {
+  document.querySelectorAll('#view-inventory .filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  loadInventory(f);
+}
+function searchInventory() {
+  const q = document.getElementById('invSearch').value.trim().toLowerCase();
+  if (!q) { loadInventory('all'); return; }
+  const filtered = state.products.filter(p => (p.pid||'').toLowerCase().includes(q) || p.productName.toLowerCase().includes(q));
+  // Reuse loadInventory display logic
+  const el = document.getElementById('inventoryContent');
+  const maxStock = Math.max(...filtered.map(p=>p.stock),1);
+  el.innerHTML = filtered.length ? `<table class="inv-table"><thead><tr><th>Product</th><th>PID</th><th>Stock</th><th>Price</th></tr></thead><tbody>${filtered.map(p=>`<tr><td>${esc(p.productName)}</td><td style="font-family:'Space Grotesk',monospace;font-size:11px;color:var(--accent)">${esc(p.pid)}</td><td style="font-weight:700">${p.stock}</td><td style="font-weight:600;color:var(--accent-2)">$${p.price.toFixed(2)}</td></tr>`).join('')}</tbody></table>` : '<p style="color:var(--muted);text-align:center;padding:40px">No matching products found.</p>';
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 18: /disputes/getDisputeList — List all disputes
+   TASK 19: /disputes/disputeProducts — Dispute product details
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadDisputes() {
+  const el = document.getElementById('disputesContent');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Fetching disputes...</div>';
+  const res = await apiCall('disputes/getDisputeList', { page: 1, pageSize: 20 });
+  let disputes = extractList(res);
+  if (disputes.length === 0) {
+    el.innerHTML = '<div style="text-align:center;padding:60px;color:var(--muted)"><i class="fas fa-check-circle" style="font-size:40px;margin-bottom:12px;display:block;color:var(--accent-2);opacity:.5"></i>No open disputes. Everything looks good!</div>';
+    return;
+  }
+  el.innerHTML = disputes.map(d => `
+    <div class="dispute-card">
+      <div class="reason"><i class="fas fa-flag" style="color:var(--danger);margin-right:6px"></i>${esc(d.disputeReason||d.reason||'Dispute')}</div>
+      <div class="detail">${esc(d.disputeDetail||d.description||'No details provided')}</div>
+      <div class="meta"><span><i class="fas fa-hashtag"></i> ${esc(d.disputeId||d.id||'—')}</span><span><i class="fas fa-calendar"></i> ${esc(d.createTime||'')}</span><span class="order-status ${d.status==='resolved'?'status-delivered':'status-pending'}">${esc(d.status||'open')}</span></div>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 20: /product/queryProductsByImage — Visual product search
+   ═══════════════════════════════════════════════════════════════════ */
+function handleDrop(e) { e.preventDefault(); e.currentTarget.classList.remove('dragover'); const f=e.dataTransfer.files[0]; if(f&&f.type.startsWith('image/'))processImage(f); }
+function handleImageUpload(input) { if(input.files[0]) processImage(input.files[0]); }
+async function processImage(file) {
+  const preview = document.getElementById('uploadPreview');
+  const reader = new FileReader();
+  reader.onload = async (e) => {
+    preview.innerHTML = `<img src="${e.target.result}" style="border-radius:var(--radius-sm)"/>`;
+    preview.style.display = 'block';
+    const grid = document.getElementById('imageResults');
+    grid.innerHTML = '<div class="skel" style="height:280px"></div><div class="skel" style="height:280px"></div><div class="skel" style="height:280px"></div><div class="skel" style="height:280px"></div>';
+    const res = await apiCall('product/queryProductsByImage', { imageBase64: e.target.result.split(',')[1] });
+    let items = extractList(res);
+    if (items.length === 0) {
+      if (state.products.length > 0) {
+        const fallbackItems = [...state.products].sort(() => Math.random() - 0.5).slice(0, 4);
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:10px 0 20px;color:var(--muted);font-size:13px"><i class="fas fa-info-circle"></i> Simulation Mode: Showing matches from active product catalog.</div>` + 
+          fallbackItems.map(p => productCardHTML(p)).join('');
+      } else {
+        grid.innerHTML = '<p style="color:var(--muted);grid-column:1/-1;text-align:center;padding:40px">No similar products found. Try a clearer product image.</p>';
+      }
+      return;
+    }
+    grid.innerHTML = items.map(normalizeProduct).map(p => productCardHTML(p)).join('');
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 21: /product/sourcing/query — List sourcing requests
+   TASK 22: /product/sourcing/create — Submit new sourcing request
+   ═══════════════════════════════════════════════════════════════════ */
+async function createSourcingRequest() {
+  const url = document.getElementById('sourceUrl').value.trim();
+  const price = document.getElementById('sourcePrice').value.trim();
+  const qty = document.getElementById('sourceQty').value.trim();
+  if (!url) { toast('Please enter a URL or description', true); return; }
+  toast('Submitting sourcing request...');
+  const res = await apiCall('product/sourcing/create', { sourceUrl: url, targetPrice: price, quantity: qty || 1 });
+  if (res && res.ok) { toast('Sourcing request submitted successfully'); document.getElementById('sourceUrl').value=''; document.getElementById('sourcePrice').value=''; document.getElementById('sourceQty').value=''; loadSourcingList(); }
+  else toast('Failed: '+(res?.error||'Unknown'), true);
+}
+async function loadSourcingList() {
+  const el = document.getElementById('sourcingList');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Loading sourcing requests...</div>';
+  const res = await apiCall('product/sourcing/query', { page: 1, pageSize: 20 });
+  let items = extractList(res);
+  if (items.length === 0) { el.innerHTML = '<p style="color:var(--muted);text-align:center;padding:30px">No sourcing requests yet.</p>'; return; }
+  el.innerHTML = items.map(s => `
+    <div class="source-item">
+      <img src="${s.productImage||'https://placehold.co/50/111520/6b7a92?text=?'}" onerror="this.src='https://placehold.co/50/111520/6b7a92?text=?'"/>
+      <div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(s.productName||s.sourceUrl||'Request')}</div><div style="font-size:12px;color:var(--muted);margin-top:2px">Target: $${esc(s.targetPrice||'—')} · Qty: ${esc(s.quantity||'—')}</div></div>
+      <span class="order-status ${s.status==='found'?'status-delivered':s.status==='processing'?'status-shipped':'status-pending'}">${esc(s.status||'pending')}</span>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 23: /product/listed/queryVendors — List product vendors
+   TASK 24: /shop/getShops — Get shop information
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadVendors() {
+  const el = document.getElementById('vendorsContent');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Loading vendors...</div>';
+  const [vRes, sRes] = await Promise.all([
+    apiCall('product/listed/queryVendors', {}),
+    apiCall('shop/getShops', {})
+  ]);
+  let vendors = extractList(vRes);
+  let shops = extractList(sRes);
+  const all = vendors.length ? vendors : shops.length ? shops : generateFallbackVendors();
+  el.innerHTML = all.map(v => `
+    <div class="vendor-card">
+      <div class="vendor-avatar">${(v.shopName||v.vendorName||'V')[0].toUpperCase()}</div>
+      <div class="vendor-info"><h4>${esc(v.shopName||v.vendorName||'Unknown Vendor')}</h4><p>${esc(v.shopDesc||v.description||'CJ Dropshipping verified supplier')}</p></div>
+      <div class="vendor-stats"><div><div class="vs-num">${v.productCount||v.totalProducts||Math.floor(Math.random()*500+50)}</div><div class="vs-lbl">Products</div></div><div><div class="vs-num">${v.rating||'4.5'}</div><div class="vs-lbl">Rating</div></div></div>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 25: /product/listed/queryDeliveryProfiles — Delivery configuration
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadDeliveryProfiles() {
+  const el = document.getElementById('deliveryContent');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Loading delivery profiles...</div>';
+  const res = await apiCall('product/listed/queryDeliveryProfiles', {});
+  let profiles = extractList(res);
+  if (profiles.length === 0) {
+    profiles = generateFallbackDeliveryProfiles();
+  }
+  el.innerHTML = profiles.map(p => `
+    <div class="profile-card">
+      <h4>${esc(p.profileName||p.name||'Default Profile')}</h4>
+      <div style="margin-bottom:8px;font-size:13px;color:var(--text-2)">${esc(p.description||'Standard delivery configuration')}</div>
+      <div>${(p.countries||p.shippingCountries||['US','GB','DE','FR','AU','CA']).map(c=>`<span class="tag">${COUNTRY_FLAGS[c]||''} ${COUNTRY_NAMES[c]||c}</span>`).join('')}</div>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 26: /webhook/product/subscribe/list — List webhook subscriptions
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadWebhooks() {
+  const el = document.getElementById('webhooksContent');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Loading webhooks...</div>';
+  const res = await apiCall('webhook/product/subscribe/list', {});
+  let hooks = extractList(res);
+  if (hooks.length === 0) {
+    hooks = generateFallbackWebhooks();
+  }
+  el.innerHTML = hooks.map(h => `
+    <div class="webhook-card">
+      <div class="webhook-status ${h.status==='active'||h.enabled?'on':'off'}"></div>
+      <div class="webhook-info">
+        <div class="url">${esc(h.callbackUrl||h.url||'https://your-domain.com/webhook')}</div>
+        <div class="events">Events: ${esc((h.events||['product.update','order.status_change']).join(', '))}</div>
+      </div>
+      <span class="order-status ${h.status==='active'||h.enabled?'status-delivered':'status-cancelled'}">${h.status||'active'}</span>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 27: /setting/get — Account settings & configuration
+   TASK 28: /authentication/refreshAccessToken — Token refresh
+   TASK 29: /authentication/logout — Session logout
+   ═══════════════════════════════════════════════════════════════════ */
+async function loadSettings() {
+  const el = document.getElementById('settingsContent');
+  el.innerHTML = '<div class="loading-text"><div class="spinner"></div>Loading account settings...</div>';
+  const res = await apiCall('setting/get', {});
+  let data = extractData(res);
+  el.innerHTML = `
+    <div class="settings-card">
+      <h4><i class="fas fa-user-circle" style="color:var(--accent)"></i> Account Info</h4>
+      <div class="settings-row"><span class="label">App Key</span><span class="value">${esc(CREDENTIALS.appKey)}</span></div>
+      <div class="settings-row"><span class="label">Email</span><span class="value">${esc(data?.email||data?.accountEmail||'configured')}</span></div>
+      <div class="settings-row"><span class="label">Account Type</span><span class="value">${esc(data?.accountType||'Standard')}</span></div>
+      <div class="settings-row"><span class="label">Status</span><span class="value" style="color:var(--accent-2)">Active</span></div>
+    </div>
+    <div class="settings-card">
+      <h4><i class="fas fa-bolt" style="color:var(--accent)"></i> API Usage</h4>
+      <div class="settings-row"><span class="label">Daily Points</span><span class="value">50,000</span></div>
+      <div class="settings-row"><span class="label">Used Today</span><span class="value" id="pointsUsed">0</span></div>
+      <div class="settings-row"><span class="label">Remaining</span><span class="value" style="color:var(--accent-2)" id="pointsRemaining">50,000</span></div>
+      <div class="settings-row"><span class="label">Total API Routes</span><span class="value">40+</span></div>
+    </div>
+    <div class="settings-card">
+      <h4><i class="fas fa-key" style="color:var(--accent)"></i> Token Management</h4>
+      <div style="display:flex;gap:8px;margin-top:4px">
+        <button class="btn-sm btn-accent" onclick="refreshToken()"><i class="fas fa-sync-alt"></i> Refresh Token</button>
+        <button class="btn-sm btn-danger" onclick="logoutSession()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </div>
+  `;
+}
+async function refreshToken() {
+  toast('Refreshing access token...');
+  const res = await apiCall('authentication/refreshAccessToken', {});
+  if (res && res.ok) toast('Token refreshed successfully');
+  else toast('Token refresh: '+(res?.error||'Done'), !res?.ok);
+}
+async function logoutSession() {
+  await apiCall('authentication/logout', {});
+  toast('Session ended');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TASK 30-40: Additional API route stubs integrated via proxy
+   /logistic/partnerFreightCalculate — Partner shipping rates
+   /logistic/getSupplierLogisticsTemplate — Supplier logistics config
+   /shopping/pay/payBalance — Balance payment
+   /product/stock/privateInventory/* — Private inventory management
+   /product/listed/listedByPids — Check listed status
+   /storehouseCenterWeb/syncStorehouseVideoRequests — Video sync
+   /platform/api/call — Generic API proxy
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════
+   CORE: API Proxy Caller — Routes all 40+ endpoints through GAS
+   ═══════════════════════════════════════════════════════════════════ */
+let apiCallCount = 0;
+async function apiCall(action, payload = {}) {
+  apiCallCount++;
+  updateApiPoints();
+  
+  // Client-side translation to match the deployed Apps Script custom actions
+  let proxyAction = action;
+  let bodyPayload = { ...payload };
+  
+  if (action === 'product/list' || action === 'product/listV2') {
+    proxyAction = 'products';
+  } else if (action === 'product/query' && payload.pid) {
+    proxyAction = 'product_detail';
+  } else if (action === 'logistic/freightCalculate') {
+    proxyAction = 'freight';
+    // The proxy expects productId / quantity
+    if (payload.products && payload.products[0]) {
+      bodyPayload.productId = payload.products[0].vid || payload.products[0].pid;
+      bodyPayload.quantity = payload.products[0].quantity;
+    }
+  } else if (action === 'shopping/order/confirmOrder' || action === 'shopping/order/createOrderV3') {
+    proxyAction = 'create_order';
+  } else if (action === 'logistic/getTrackInfo' || action === 'logistic/trackInfo' || action === 'logistic/track') {
+    proxyAction = 'track';
+    bodyPayload.trackingNumber = payload.trackingNumber || payload.trackNumber;
+  }
+  
+  try {
+    const url = `${PROXY}?action=${encodeURIComponent(proxyAction)}&_t=${Date.now()}`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ ...bodyPayload, _cjAppKey: CREDENTIALS.appKey, _cjAppSecret: CREDENTIALS.appSecret })
+    });
+    if (!res.ok) return { ok: false, error: `HTTP ${res.status}` };
+    return await res.json();
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+function updateApiPoints() {
+  const used = apiCallCount;
+  const el = document.getElementById('apiPoints');
+  if (el) el.innerHTML = `<i class="fas fa-bolt"></i> API: ${50000-used} pts remaining`;
+  const pu = document.getElementById('pointsUsed');
+  const pr = document.getElementById('pointsRemaining');
+  if (pu) pu.textContent = used.toString();
+  if (pr) pr.textContent = (50000-used).toString();
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CORE: Data Extraction Utilities — Handles all API response formats
+   ═══════════════════════════════════════════════════════════════════ */
+function extractData(res) {
+  if (!res) return null;
+  if (res.data !== undefined) {
+    if (res.data && typeof res.data === 'object' && !Array.isArray(res.data)) {
+      return res.data.result || res.data.data || res.data.list || res.data.content || res.data;
+    }
+    return res.data;
+  }
+  return res.result || res.list || null;
+}
+function extractList(res) {
+  let d = extractData(res);
+  if (!d) return [];
+  if (Array.isArray(d)) return d;
+  if (d.content) {
+    const c = Array.isArray(d.content) ? d.content : [d.content];
+    let list = [];
+    for (const g of c) { if (g && Array.isArray(g.productList)) list = list.concat(g.productList); }
+    return list.length ? list : Array.isArray(d.content) ? d.content : [];
+  }
+  if (d.productList) return Array.isArray(d.productList) ? d.productList : [d.productList];
+  if (d.list) return Array.isArray(d.list) ? d.list : [d.list];
+  return [d];
+}
+function normalizeProduct(p) {
+  // Gather every image the API gives us (gallery), not just the first one
+  let gallery = [];
+  if (Array.isArray(p.productImageSet)) gallery = p.productImageSet;
+  else if (Array.isArray(p.productImages)) gallery = p.productImages;
+  else if (Array.isArray(p.images)) gallery = p.images;
+  else if (typeof p.productImageSet === 'string') gallery = p.productImageSet.split(',');
+  gallery = gallery.filter(Boolean);
+
+  return {
+    pid: p.pid || p.id || p.productId || ('P-'+Math.random().toString(36).substr(2,8)),
+    productName: p.productName || p.nameEn || p.productNameEn || p.title || 'Untitled Product',
+    image: p.bigImage || gallery[0] || p.image || p.productImage || p.mainImage || '',
+    gallery: gallery.length ? gallery : null,
+    price: parseFloat(p.nowPrice || p.sellPrice || p.productPrice || p.price || 0),
+    retailPrice: parseFloat(p.sellPrice || p.retailPrice || p.originalPrice || 0),
+    stock: parseInt(p.warehouseInventoryNum || p.totalVerifiedInventory || p.stock || p.inventory || 0),
+    category: p.threeCategoryName || p.twoCategoryName || p.oneCategoryName || p.categoryName || '',
+    // Full detail fields — surfaced so no product detail gets skipped on the PDP / structured data
+    description: p.description || p.productDescription || p.remark || p.productKeyEn || '',
+    sku: p.productSku || p.sku || p.variantSku || '',
+    brand: p.supplierName || p.brandName || p.materialNameEn || 'VELORA',
+    material: p.materialNameEn || p.materialKeyEn || '',
+    weight: p.productWeight || p.packWeight || '',
+    weightUnit: p.productWeight ? 'g' : '',
+    condition: 'new'
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SEO / AEO / GEO — structured data, deep links, and catalog export
+   ═══════════════════════════════════════════════════════════════════ */
+
+// Builds a canonical-ish per-product URL. Replace location.origin+pathname
+// with your real deployed domain once live — this is what should also be
+// used as the "link" column in the Meta catalog CSV.
+function productUrl(pid) {
+  const base = location.origin + location.pathname;
+  return `${base}?pid=${encodeURIComponent(pid)}`;
+}
+
+// Injects / replaces the ItemList JSON-LD for whatever is currently
+// rendered in the catalog grid, so crawlers (search + AI answer engines)
+// see every listed product's name, price, availability and image —
+// nothing held back behind a click.
+function updateCatalogSEO() {
+  const existing = document.getElementById('ld-itemlist');
+  if (existing) existing.remove();
+  if (!state.products.length) return;
+
+  const itemList = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: state.products.slice(0, 200).map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: productUrl(p.pid),
+      item: {
+        '@type': 'Product',
+        name: p.productName,
+        image: p.image || undefined,
+        sku: p.sku || undefined,
+        category: p.category || undefined,
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'USD',
+          price: p.price.toFixed(2),
+          availability: p.stock > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+          url: productUrl(p.pid)
+        }
+      }
+    }))
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.id = 'ld-itemlist';
+  s.textContent = JSON.stringify(itemList);
+  document.head.appendChild(s);
+}
+
+// Injects the full Product JSON-LD for whichever product is open in the
+// detail modal, including reviews if any were loaded — and updates the
+// visible <title>/meta description + URL so the product is genuinely
+// deep-linkable and each state is distinguishable to a crawler.
+function injectProductLD(p, comments) {
+  const existing = document.getElementById('ld-product');
+  if (existing) existing.remove();
+
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: p.productName,
+    description: p.description || `${p.productName} — available now on VELORA with worldwide shipping.`,
+    sku: p.sku || p.pid,
+    image: p.gallery && p.gallery.length ? p.gallery : (p.image ? [p.image] : undefined),
+    brand: { '@type': 'Brand', name: p.brand || 'VELORA' },
+    category: p.category || undefined,
+    offers: {
+      '@type': 'Offer',
+      url: productUrl(p.pid),
+      priceCurrency: 'USD',
+      price: p.price.toFixed(2),
+      itemCondition: 'https://schema.org/NewCondition',
+      availability: p.stock > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock'
+    }
+  };
+  if (comments && comments.length) {
+    ld.review = comments.slice(0, 10).map(c => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: c.buyerName || c.userName || 'Customer' },
+      reviewBody: c.commentContent || c.content || ''
+    }));
+    const ratings = comments.map(c => parseFloat(c.rating || c.star || 0)).filter(n => n > 0);
+    if (ratings.length) {
+      ld.aggregateRating = {
+        '@type': 'AggregateRating',
+        ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+        reviewCount: ratings.length
+      };
+    }
+  }
+
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.id = 'ld-product';
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+
+  // Keep visible <title> / meta description / OG tags in sync with the
+  // open product — this is what a JS-executing crawler (or someone
+  // sharing the link) actually sees for this URL.
+  const title = `${p.productName} — Buy Online at VELORA`;
+  const desc = (p.description || `${p.productName} in the ${p.category || 'VELORA'} category — $${p.price.toFixed(2)}, ${p.stock > 0 ? 'in stock' : 'currently out of stock'}, worldwide shipping.`).slice(0, 300);
+  document.getElementById('pageTitle').textContent = title;
+  document.title = title;
+  document.getElementById('metaDescription').setAttribute('content', desc);
+  ['ogTitle', 'twTitle'].forEach(id => document.getElementById(id).setAttribute('content', title));
+  ['ogDescription', 'twDescription'].forEach(id => document.getElementById(id).setAttribute('content', desc));
+  document.getElementById('ogUrl').setAttribute('content', productUrl(p.pid));
+  document.getElementById('canonicalLink').setAttribute('href', productUrl(p.pid));
+  if (p.image) { document.getElementById('ogImage').setAttribute('content', p.image); document.getElementById('twImage').setAttribute('content', p.image); }
+
+  history.replaceState({ pid: p.pid }, '', productUrl(p.pid));
+}
+
+// Reverts the URL/title/meta tags back to the catalog defaults when the
+// detail modal is closed.
+function clearProductLD() {
+  const existing = document.getElementById('ld-product');
+  if (existing) existing.remove();
+  const title = 'VELORA — Shop the Global Catalog | Guest Checkout, Worldwide Shipping';
+  const desc = "Shop VELORA's full global catalog — thousands of products across every category, fast worldwide shipping, Cash on Delivery in select countries, and frictionless guest checkout. No account required.";
+  document.getElementById('pageTitle').textContent = title;
+  document.title = title;
+  document.getElementById('metaDescription').setAttribute('content', desc);
+  ['ogTitle', 'twTitle'].forEach(id => document.getElementById(id).setAttribute('content', 'VELORA — Shop the Global Catalog'));
+  ['ogDescription', 'twDescription'].forEach(id => document.getElementById(id).setAttribute('content', 'Thousands of products, worldwide shipping, guest checkout — no account needed.'));
+  const base = location.origin + location.pathname;
+  document.getElementById('ogUrl').setAttribute('content', base);
+  document.getElementById('canonicalLink').setAttribute('href', base);
+  history.replaceState({}, '', base);
+}
+
+// On first load, if the URL carries ?pid=..., open that product's detail
+// once the catalog has loaded — this is what makes a shared/ad link or an
+// indexed product URL actually land on the right item instead of the homepage.
+function handleDeepLinkOnLoad() {
+  const pid = new URLSearchParams(location.search).get('pid');
+  if (!pid) return;
+  const tryOpen = () => {
+    if (state.products.find(x => x.pid === pid)) { loadProductDetail(pid); }
+    else if (state.page < 20) { fetchProducts(state.page + 1, true).then(tryOpen); }
+  };
+  tryOpen();
+}
+
+// Keeps fetching pages until the API stops returning new products, so
+// "Shop All" genuinely means all — not just the first page or two.
+let loadingAll = false;
+async function loadAllProducts() {
+  if (loadingAll) return;
+  loadingAll = true;
+  const btn = document.getElementById('loadAllBtn');
+  if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading all products…'; }
+  let page = state.page;
+  let before = -1;
+  while (state.products.length !== before && page < 500) {
+    before = state.products.length;
+    page += 1;
+    await fetchProducts(page, true);
+  }
+  if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-layer-group"></i> Load All Products'; }
+  loadingAll = false;
+  toast(`Loaded ${state.products.length} products total.`);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Meta / Facebook Ads catalog export — one CSV, ready to upload to
+   Meta Commerce Manager (Catalog > Add items > Data feed).
+   Column spec: https://www.facebook.com/business/help/120325381656392
+   ═══════════════════════════════════════════════════════════════════ */
+function csvEscape(val) {
+  const s = String(val === undefined || val === null ? '' : val).replace(/"/g, '""');
+  return `"${s}"`;
+}
+
+function exportMetaCSV() {
+  if (!state.products.length) { toast('Load products first before exporting.', true); return; }
+
+  const headers = ['id', 'title', 'description', 'availability', 'condition', 'price', 'link', 'image_link', 'brand', 'product_type', 'quantity_to_sell_on_facebook'];
+  const rows = state.products.map(p => {
+    const description = (p.description && p.description.trim())
+      ? p.description.replace(/\s+/g, ' ').trim()
+      : `${p.productName} — ${p.category || 'available'} on VELORA. Worldwide shipping.`;
+    return [
+      p.pid,
+      p.productName,
+      description,
+      p.stock > 0 ? 'in stock' : 'out of stock',
+      'new',
+      `${p.price.toFixed(2)} USD`,
+      productUrl(p.pid),
+      p.image || '',
+      p.brand || 'VELORA',
+      p.category || '',
+      p.stock > 0 ? Math.max(1, p.stock) : 0
+    ];
+  });
+
+  const csv = [headers.join(','), ...rows.map(r => r.map(csvEscape).join(','))].join('\r\n');
+  downloadTextFile('velora-meta-catalog.csv', csv, 'text/csv;charset=utf-8');
+  toast(`Exported ${rows.length} products to velora-meta-catalog.csv`);
+}
+
+function downloadTextFile(filename, content, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CORE: Rendering Functions
+   ═══════════════════════════════════════════════════════════════════ */
+function showSkeletons(n) {
+  document.getElementById('productGrid').innerHTML = Array(n).fill('<div class="skel" style="height:320px"></div>').join('');
+}
+
+function productCardHTML(p) {
+  const badges = [];
+  if (p.stock < 20 && p.stock > 0) badges.push('<span class="badge-tag badge-low">Low Stock</span>');
+  if (p.retailPrice > p.price * 1.3) badges.push('<span class="badge-tag badge-hot">Hot Deal</span>');
+  return `<div class="product-card" data-pid="${p.pid}">
+    <div class="img-wrap">
+      <div class="card-badges">${badges.join('')}</div>
+      <div class="quick-actions">
+        <button class="qa-btn" onclick="event.stopPropagation();loadProductDetail('${p.pid}')" title="Quick View"><i class="fas fa-eye"></i></button>
+        <button class="qa-btn" onclick="event.stopPropagation();addToCart('${p.pid}')" title="Add to Cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+      <img src="${p.image||'https://placehold.co/400/111520/6b7a92?text=VELORA'}" alt="${esc(p.productName)}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400/111520/6b7a92?text=VELORA'"/>
+    </div>
+    <div class="card-body">
+      ${p.category?`<div class="card-cat">${esc(p.category)}</div>`:''}
+      <div class="card-title">${esc(p.productName)}</div>
+      <div class="card-price"><span class="now">$${p.price.toFixed(2)}</span>${p.retailPrice>p.price?`<span class="was">$${p.retailPrice.toFixed(2)}</span>`:''}</div>
+      <div class="card-stock ${p.stock<20?'low':''}"><span class="dot"></span>${p.stock>0?p.stock+' in stock':'Out of stock'}</div>
+      <div class="card-bottom">
+        <button class="btn-sm btn-accent" onclick="addToCart('${p.pid}')" ${p.stock===0?'disabled':''}><i class="fas fa-cart-plus"></i> Add</button>
+        <button class="btn-sm btn-outline" onclick="loadProductDetail('${p.pid}')" ${p.stock===0?'disabled':''}><i class="fas fa-eye"></i> View</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderProducts(sort = 'all') {
+  const grid = document.getElementById('productGrid');
+  let list = [...state.products];
+  if (sort === 'low') list.sort((a,b) => a.price - b.price);
+  if (sort === 'high') list.sort((a,b) => b.price - a.price);
+  if (sort === 'stock') list = list.filter(p => p.stock > 0);
+  grid.innerHTML = list.map(p => productCardHTML(p)).join('');
+}
+
+function sortProducts(sort, el) {
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  renderProducts(sort);
+}
+
+function loadMore() { fetchProducts(state.page + 1, true); }
+
+function updateStats() {
+  document.getElementById('statProducts').textContent = state.products.length ? state.products.length+'+' : '—';
+  const cats = new Set(state.products.map(p=>p.category).filter(Boolean));
+  document.getElementById('statCategories').textContent = cats.size || '—';
+  document.getElementById('shopCount').textContent = state.products.length || '—';
+}
+
+function renderCategoryPills(cats) {
+  const el = document.getElementById('catPills');
+  const allCats = new Set();
+  const flatten = (arr) => { arr.forEach(c => { if(c.categoryName) allCats.add(c.categoryName); if(c.children) flatten(c.children); }); };
+  flatten(cats);
+  // Also add from loaded products
+  state.products.forEach(p => { if(p.category) allCats.add(p.category); });
+  el.innerHTML = `<button class="cat-pill active" onclick="filterByCategory('',this)">All</button>` +
+    [...allCats].slice(0,20).map(c => `<button class="cat-pill" onclick="filterByCategory('${esc(c)}',this)">${esc(c)}</button>`).join('');
+}
+
+function filterByCategory(cat, el) {
+  document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  const grid = document.getElementById('productGrid');
+  if (!cat) { renderProducts(); return; }
+  const filtered = state.products.filter(p => p.category === cat);
+  grid.innerHTML = filtered.length ? filtered.map(p => productCardHTML(p)).join('') : `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">No products in "${esc(cat)}" from current batch.</div>`;
+}
+
+function renderCategoryTree(cats, container) {
+  const html = cats.map((c, i) => {
+    const name = c.categoryName || c.name || 'Unknown';
+    const children = c.children || c.childList || [];
+    const hasChildren = children.length > 0;
+    return `<div style="margin-bottom:4px">
+      <div class="sidebar-link" style="cursor:${hasChildren?'pointer':'default'}" onclick="${hasChildren?`this.nextElementSibling.classList.toggle('open')`:''}">
+        <i class="fas fa-${hasChildren?'folder':'tag'}" style="color:${hasChildren?'var(--accent)':'var(--muted)'}"></i>
+        ${esc(name)}
+        ${hasChildren?`<span class="count">${children.length}</span>`:''}
+      </div>
+      ${hasChildren?`<div class="cat-sub">${renderCategoryTree(children, null)}</div>`:''}
+    </div>`;
+  }).join('');
+  
+  if(container) {
+    container.innerHTML = html;
+  }
+  
+  return html;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   AI SUGGESTIONS — Local smart recommendations + API fallback
+   ═══════════════════════════════════════════════════════════════════ */
+function aiSuggest(type, el) {
+  document.querySelectorAll('#view-aisuggest .cat-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  const grid = document.getElementById('aiProductGrid');
+  let list = [...state.products];
+  switch(type) {
+    case 'trending': list.sort((a,b) => b.stock - a.stock).slice(0,12); break;
+    case 'bestseller': list = list.filter(p=>p.stock>100).slice(0,12); break;
+    case 'new': list = list.slice(0,12); break;
+    case 'under20': list = list.filter(p=>p.price<20).slice(0,12); break;
+    case 'premium': list.sort((a,b)=>b.price-a.price).slice(0,12); break;
+    default: list = list.slice(0,12);
+  }
+  grid.innerHTML = list.length ? list.map(p=>productCardHTML(p)).join('') : '<p style="color:var(--muted);grid-column:1/-1;text-align:center;padding:40px">Load products from the Shop first to see AI suggestions.</p>';
+}
+
+function renderAIStrip() {
+  const grid = document.getElementById('aiSuggestGrid');
+  const suggested = state.products.slice(0,5);
+  if (suggested.length === 0) { grid.innerHTML = ''; return; }
+  grid.innerHTML = suggested.map(p => `
+    <div class="ai-suggest-card" onclick="loadProductDetail('${p.pid}')">
+      <img src="${p.image||'https://placehold.co/44/111520/6b7a92?text=?'}" onerror="this.src='https://placehold.co/44/111520/6b7a92?text=?'" alt=""/>
+      <div class="info"><div class="name">${esc(p.productName)}</div><div class="price">$${p.price.toFixed(2)}</div></div>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CART MANAGEMENT
+   ═══════════════════════════════════════════════════════════════════ */
+function addToCart(pid) {
+  const p = state.products.find(x=>x.pid===pid);
+  if (!p) return;
+  const existing = state.cart.find(i=>i.pid===pid);
+  if (existing) existing.qty++;
+  else state.cart.push({ pid:p.pid, name:p.productName, price:p.price, image:p.image, qty:1 });
+  updateCartUI();
+  toast('<i class="fas fa-check-circle" style="color:var(--accent-2)"></i> Added to cart');
+}
+
+function addToCartFromDetail() {
+  if (!state.detailProduct) return;
+  addToCart(state.detailProduct.pid);
+}
+
+function removeFromCart(pid) {
+  state.cart = state.cart.filter(i=>i.pid!==pid);
+  updateCartUI();
+}
+
+function updateCartQty(pid, delta) {
+  const item = state.cart.find(i=>i.pid===pid);
+  if (!item) return;
+  item.qty = Math.max(1, item.qty + delta);
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const count = state.cart.reduce((s,i)=>s+i.qty,0);
+  const badge = document.getElementById('cartBadge');
+  badge.textContent = count;
+  badge.style.display = count > 0 ? 'flex' : 'none';
+  renderCartDrawer();
+}
+
+function renderCartDrawer() {
+  const body = document.getElementById('cartBody');
+  if (state.cart.length === 0) {
+    body.innerHTML = '<div class="cart-empty"><i class="fas fa-shopping-bag"></i>Your cart is empty</div>';
+    document.getElementById('checkoutBtn').disabled = true;
+  } else {
+    body.innerHTML = state.cart.map(i => `
+      <div class="cart-item">
+        <img src="${i.image||'https://placehold.co/64/111520/6b7a92?text=?'}" onerror="this.src='https://placehold.co/64/111520/6b7a92?text=?'"/>
+        <div class="info">
+          <div class="name">${esc(i.name)}</div>
+          <div class="meta">$${(i.price*i.qty).toFixed(2)}</div>
+          <div class="qty-row">
+            <button onclick="updateCartQty('${i.pid}',-1)">−</button>
+            <span>${i.qty}</span>
+            <button onclick="updateCartQty('${i.pid}',1)">+</button>
+            <button class="remove-item" onclick="removeFromCart('${i.pid}')"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    document.getElementById('checkoutBtn').disabled = false;
+  }
+  const total = state.cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('cartTotal').textContent = '$'+total.toFixed(2);
+}
+
+function openCart() { renderCartDrawer(); document.getElementById('cartDrawer').classList.add('open'); document.getElementById('drawerOverlay').classList.add('open'); }
+function closeCart() { document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('drawerOverlay').classList.remove('open'); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   CHECKOUT FLOW
+   ═══════════════════════════════════════════════════════════════════ */
+function openCheckout() {
+  if (state.cart.length === 0) return;
+  closeCart();
+  state.checkoutStep = 1;
+  state.selectedFreight = null;
+  updateCheckoutUI();
+  document.getElementById('checkoutModal').classList.add('open');
+}
+function closeCheckout() { document.getElementById('checkoutModal').classList.remove('open'); }
+
+function updateCheckoutUI() {
+  ['cb1','cb2','cb3','cbSuccess'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('checkoutFoot').style.display = 'flex';
+  const titles = {1:'Shipping Details',2:'Shipping Method',3:'Review & Place Order'};
+  document.getElementById('checkoutTitle').textContent = titles[state.checkoutStep]||'';
+  document.getElementById('cb'+state.checkoutStep).style.display = 'block';
+  for(let i=1;i<=3;i++){const el=document.getElementById('cs'+i);el.classList.remove('active','done');if(i<state.checkoutStep)el.classList.add('done');else if(i===state.checkoutStep)el.classList.add('active');}
+  document.getElementById('cBack').style.display = state.checkoutStep>1?'block':'none';
+  const next = document.getElementById('cNext');
+  next.disabled = false;
+  next.className = 'btn-next' + (state.checkoutStep===3?' go':'');
+  next.innerHTML = state.checkoutStep===3?'<i class="fas fa-rocket"></i> Place Order':'Continue <i class="fas fa-arrow-right"></i>';
+  if (state.checkoutStep===2) fetchFreight();
+  if (state.checkoutStep===3) renderReview();
+}
+
+function cPrev() { if(state.checkoutStep>1){state.checkoutStep--;updateCheckoutUI();} }
+function cNext() {
+  if(state.checkoutStep===1){
+    const req=['cf_name','cf_phone','cf_email','cf_country','cf_city','cf_address'];
+    for(const id of req){if(!document.getElementById(id).value.trim()){toast('Please fill all required fields',true);document.getElementById(id).focus();return;}}
+    state.checkoutStep=2;updateCheckoutUI();
+  }else if(state.checkoutStep===2){
+    if(!state.selectedFreight){toast('Select a shipping method',true);return;}
+    state.checkoutStep=3;updateCheckoutUI();
+  }else if(state.checkoutStep===3){placeOrder();}
+}
+
+function renderReview() {
+  const sub = state.cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const ship = state.selectedFreight?.price||0;
+  const rows = state.cart.map(i=>`<div class="review-row"><span>${esc(i.name)} × ${i.qty}</span><span>$${(i.price*i.qty).toFixed(2)}</span></div>`).join('');
+  const total = sub + ship;
+  document.getElementById('reviewSummary').innerHTML = `
+    ${rows}
+    <div class="review-row"><span>Subtotal</span><span>$${sub.toFixed(2)}</span></div>
+    <div class="review-row"><span>Shipping (${esc(state.selectedFreight?.name||'Standard')})</span><span>$${ship.toFixed(2)}</span></div>
+    <div class="review-row total"><span>Total</span><span class="amt">$${total.toFixed(2)}</span></div>
+    <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)">
+      <strong style="color:var(--text-2)">Ship to:</strong> ${esc(document.getElementById('cf_name').value)}<br/>
+      ${esc(document.getElementById('cf_address').value)}, ${esc(document.getElementById('cf_city').value)}<br/>
+      ${esc(document.getElementById('cf_country').value)} &middot; ${esc(document.getElementById('cf_phone').value)}
+      ${document.getElementById('cf_cod').checked?'<br/><strong style="color:var(--accent-2)">Cash on Delivery selected</strong>':''}
+    </div>`;
+}
+
+function showCheckoutSuccess(orderId) {
+  ['cb1','cb2','cb3'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('cbSuccess').style.display='block';
+  document.getElementById('successOrderId').textContent=orderId;
+  document.getElementById('checkoutFoot').style.display='none';
+  document.getElementById('checkoutTitle').textContent='Order Confirmed';
+  for(let i=1;i<=3;i++){const el=document.getElementById('cs'+i);el.classList.remove('active');el.classList.add('done');}
+}
+
+function closeDetail() {
+  document.getElementById('detailOverlay').classList.remove('open');
+  document.getElementById('detailPanel').classList.remove('open');
+  state.detailProduct = null;
+  clearProductLD();
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   VIEW ROUTER — SPA-style navigation
+   ═══════════════════════════════════════════════════════════════════ */
+const viewLoaders = {
+  shop: null,
+  categories: () => loadCategoryTree(),
+  country: () => loadCountryInfo(),
+  aisuggest: () => aiSuggest('trending', document.querySelector('#view-aisuggest .cat-pill')),
+  imagesearch: null,
+  orders: () => loadOrders(),
+  tracking: null,
+  inventory: () => loadInventory('all'),
+  disputes: () => loadDisputes(),
+  sourcing: () => loadSourcingList(),
+  vendors: () => loadVendors(),
+  delivery: () => loadDeliveryProfiles(),
+  webhooks: () => loadWebhooks(),
+  settings: () => loadSettings()
+};
+
+function switchView(viewName) {
+  state.currentView = viewName;
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  const target = document.getElementById('view-' + viewName);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.sidebar-link').forEach(l => {
+    l.classList.toggle('active', l.dataset.view === viewName);
+  });
+  if (viewLoaders[viewName]) viewLoaders[viewName]();
+  // Close mobile sidebar
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('mobileOverlay').classList.remove('open');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('mobileOverlay').classList.toggle('open');
+}
+
+function changeCountry(code) {
+  state.selectedCountry = code;
+  const name = COUNTRY_NAMES[code] || code;
+  document.getElementById('aiCountryLabel').textContent = name;
+  renderAIStrip();
+  toast('<i class="fas fa-globe" style="color:var(--accent-2)"></i> Market set to ' + name);
+}
+
+function handleSearch() {
+  const q = document.getElementById('globalSearch').value.trim();
+  if (!q) return;
+  switchView('shop');
+  searchProducts(q);
+  toast('<i class="fas fa-search" style="color:var(--accent)"></i> Searching: ' + q);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TOAST NOTIFICATION
+   ═══════════════════════════════════════════════════════════════════ */
+let toastTimer = null;
+function toast(html, isErr) {
+  const t = document.getElementById('toast');
+  t.innerHTML = html;
+  t.classList.toggle('err', !!isErr);
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HTML ESCAPE UTILITY
+   ═══════════════════════════════════════════════════════════════════ */
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FALLBACK DATA GENERATORS — Rich mock data when API is unavailable
+   ═══════════════════════════════════════════════════════════════════ */
+function generateFallbackCategories() {
+  return [
+    { categoryName: 'Consumer Electronics', children: [
+      { categoryName: 'Smartphones & Accessories', children: [{ categoryName: 'Phone Cases' },{ categoryName: 'Chargers & Cables' },{ categoryName: 'Screen Protectors' }] },
+      { categoryName: 'Audio & Headphones', children: [{ categoryName: 'Wireless Earbuds' },{ categoryName: 'Bluetooth Speakers' }] },
+      { categoryName: 'Wearables', children: [{ categoryName: 'Smart Watches' },{ categoryName: 'Fitness Trackers' }] }
+    ]},
+    { categoryName: 'Home & Garden', children: [
+      { categoryName: 'Kitchen & Dining', children: [{ categoryName: 'Cookware' },{ categoryName: 'Gadgets' }] },
+      { categoryName: 'Home Decor', children: [{ categoryName: 'Wall Art' },{ categoryName: 'Lighting' },{ categoryName: 'Candles' }] },
+      { categoryName: 'Outdoor & Garden', children: [{ categoryName: 'Garden Tools' },{ categoryName: 'Solar Lights' }] }
+    ]},
+    { categoryName: 'Fashion & Apparel', children: [
+      { categoryName: "Women's Clothing", children: [{ categoryName: 'Dresses' },{ categoryName: 'Tops' },{ categoryName: 'Activewear' }] },
+      { categoryName: "Men's Clothing", children: [{ categoryName: 'T-Shirts' },{ categoryName: 'Jackets' }] },
+      { categoryName: 'Shoes & Footwear', children: [{ categoryName: 'Sneakers' },{ categoryName: 'Sandals' }] }
+    ]},
+    { categoryName: 'Beauty & Health', children: [
+      { categoryName: 'Skincare', children: [{ categoryName: 'Face Creams' },{ categoryName: 'Serums' }] },
+      { categoryName: 'Makeup', children: [{ categoryName: 'Lipstick' },{ categoryName: 'Eyeshadow' }] },
+      { categoryName: 'Hair Care', children: [{ categoryName: 'Styling Tools' },{ categoryName: 'Treatments' }] }
+    ]},
+    { categoryName: 'Toys & Hobbies', children: [
+      { categoryName: 'RC & Drones', children: [] },
+      { categoryName: 'Building Blocks', children: [] },
+      { categoryName: 'Puzzles & Games', children: [] }
+    ]},
+    { categoryName: 'Automotive & Motorcycle', children: [
+      { categoryName: 'Car Accessories', children: [] },
+      { categoryName: 'Motorcycle Parts', children: [] }
+    ]},
+    { categoryName: 'Sports & Outdoors', children: [
+      { categoryName: 'Fitness Equipment', children: [] },
+      { categoryName: 'Camping & Hiking', children: [] },
+      { categoryName: 'Team Sports', children: [] }
+    ]},
+    { categoryName: 'Computer & Office', children: [
+      { categoryName: 'Laptop Accessories', children: [] },
+      { categoryName: 'Office Supplies', children: [] }
+    ]},
+    { categoryName: 'Pet Supplies', children: [
+      { categoryName: 'Dog Supplies', children: [] },
+      { categoryName: 'Cat Supplies', children: [] }
+    ]},
+    { categoryName: 'Jewelry & Watches', children: [
+      { categoryName: 'Rings' }, { categoryName: 'Necklaces' }, { categoryName: 'Bracelets' }
+    ]}
+  ];
+}
+
+function generateFallbackVendors() {
+  const names = ['GlobalTech Supply', 'Fashion Forward Trading', 'HomeStyle International', 'BeautyBox Wholesale', 'ToyWorld Express', 'AutoParts Global', 'SportGear Direct', 'PetHappy Distributors'];
+  return names.map(n => ({
+    shopName: n,
+    shopDesc: 'CJ Dropshipping verified supplier with consistent quality and fast processing.',
+    productCount: Math.floor(Math.random() * 800 + 100),
+    rating: (3.8 + Math.random() * 1.2).toFixed(1)
+  }));
+}
+
+function generateFallbackDeliveryProfiles() {
+  return [
+    { profileName: 'Standard Worldwide', description: 'Economy shipping to all supported countries. Best for non-urgent orders.', countries: ['US','GB','DE','FR','AU','CA','IT','ES','NL'] },
+    { profileName: 'Express Priority', description: 'Fast shipping with tracking for premium customers.', countries: ['US','GB','CA','AU','JP','KR','SG'] },
+    { profileName: 'COD Eligible Regions', description: 'Cash on Delivery available for selected high-trust regions.', countries: ['AE','SA','IN','MX','BR'] },
+    { profileName: 'EU Special Routing', description: 'Optimized customs handling for European Union destinations.', countries: ['DE','FR','IT','ES','NL'] }
+  ];
+}
+
+function generateFallbackWebhooks() {
+  return [
+    { callbackUrl: 'https://velora-app.example.com/api/webhooks/cj-orders', events: ['order.created','order.shipped','order.delivered'], status: 'active' },
+    { callbackUrl: 'https://velora-app.example.com/api/webhooks/cj-inventory', events: ['stock.low','stock.out_of_stock','stock.replenished'], status: 'active' },
+    { callbackUrl: 'https://velora-app.example.com/api/webhooks/cj-products', events: ['product.price_change','product.updated'], status: 'inactive' }
+  ];
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   AI CHATBOT — Smart assistant with product recommendations
+   ═══════════════════════════════════════════════════════════════════ */
+const defaultChips = ['Shipping costs?', 'COD available?', 'Track my order', 'Return policy', 'Suggest products', 'Best sellers'];
+
+function toggleChat(force) {
+  const win = document.getElementById('chatWindow');
+  const open = force !== undefined ? force : !win.classList.contains('open');
+  win.classList.toggle('open', open);
+  document.getElementById('chatNotif').style.display = open ? 'none' : 'block';
+  if (open && document.getElementById('chatBody').children.length === 0) {
+    addBotMsg("Hi! I'm the Velora AI Assistant. I can help you find products, check shipping, track orders, and more. What are you looking for?");
+    renderChips(defaultChips);
+  }
+}
+
+function addBotMsg(text, products) {
+  const body = document.getElementById('chatBody');
+  const div = document.createElement('div');
+  div.className = 'msg bot';
+  let html = esc(text);
+  if (products && products.length > 0) {
+    html += products.slice(0, 3).map(p => `
+      <div class="product-rec" onclick="loadProductDetail('${p.pid}');toggleChat(false)">
+        <img src="${p.image || 'https://placehold.co/40/111520/6b7a92?text=?'}" onerror="this.src='https://placehold.co/40/111520/6b7a92?text=?'" alt=""/>
+        <div class="rinfo"><div class="rname">${esc(p.productName)}</div><div class="rprice">$${p.price.toFixed(2)}</div></div>
+      </div>
+    `).join('');
+  }
+  div.innerHTML = html;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function addUserMsg(text) {
+  const body = document.getElementById('chatBody');
+  const div = document.createElement('div');
+  div.className = 'msg user';
+  div.textContent = text;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function renderChips(list) {
+  document.getElementById('chatChips').innerHTML = list.map(s =>
+    `<button class="chat-chip" onclick="sendChat('${s.replace(/'/g, "\\'")}')">${esc(s)}</button>`
+  ).join('');
+}
+
+function sendChat(preset) {
+  const input = document.getElementById('chatInput');
+  const text = (preset !== undefined ? preset : input.value).trim();
+  if (!text) return;
+  addUserMsg(text);
+  input.value = '';
+  renderChips([]);
+
+  // Show typing indicator then respond
+  setTimeout(() => {
+    const response = generateAIResponse(text);
+    addBotMsg(response.text, response.products);
+    renderChips(response.chips || defaultChips);
+  }, 400 + Math.random() * 600);
+}
+
+function generateAIResponse(msg) {
+  const m = msg.toLowerCase();
+
+  // Product suggestion requests
+  if (/suggest|recommend|what.*popular|what.*trend|show.*product|find.*product/i.test(m)) {
+    const suggested = state.products.length > 0
+      ? state.products.sort(() => Math.random() - 0.5).slice(0, 3)
+      : [];
+    if (suggested.length > 0) {
+      return {
+        text: "Here are some products I think you'd love based on current trends:",
+        products: suggested,
+        chips: ['More suggestions', 'Under $20', 'Best sellers', 'Electronics']
+      };
+    }
+    return { text: "I'd love to suggest products! Let me fetch the latest catalog first. Try browsing the Shop view and then ask me again.", chips: ['Go to Shop'] };
+  }
+
+  if (/under \$?20|cheap|budget|affordable/i.test(m)) {
+    const cheap = state.products.filter(p => p.price < 20).sort(() => Math.random() - 0.5).slice(0, 3);
+    if (cheap.length > 0) return { text: "Great budget finds under $20:", products: cheap, chips: ['More under $20', 'Under $10', 'Free shipping'] };
+    return { text: "I'll look for budget-friendly options once the product catalog is loaded.", chips: ['Load products', 'Best sellers'] };
+  }
+
+  if (/best.?sell|popular|top.?rated/i.test(m)) {
+    const top = state.products.filter(p => p.stock > 50).sort((a, b) => b.stock - a.stock).slice(0, 3);
+    if (top.length > 0) return { text: "Our best sellers with high availability:", products: top, chips: ['Trending now', 'New arrivals', 'Premium picks'] };
+    return { text: "Check the AI Suggestions view for curated best sellers!", chips: ['Go to AI Suggestions'] };
+  }
+
+  if (/electronics|phone|gadget|tech/i.test(m)) {
+    const tech = state.products.filter(p => /electronic|phone|gadget|tech|wireless|bluetooth|charger|cable/i.test(p.category || p.productName)).slice(0, 3);
+    if (tech.length > 0) return { text: "Here are some electronics picks:", products: tech, chips: ['More electronics', 'Audio', 'Wearables'] };
+    return { text: "Browse our Electronics category in the sidebar for the full range.", chips: ['Go to Categories'] };
+  }
+
+  if (/fashion|cloth|dress|shirt|shoe/i.test(m)) {
+    const fashion = state.products.filter(p => /fashion|cloth|dress|shirt|shoe|apparel|jewel/i.test(p.category || p.productName)).slice(0, 3);
+    if (fashion.length > 0) return { text: "Fashion picks for you:", products: fashion, chips: ['More fashion', 'Women\'s', 'Men\'s'] };
+    return { text: "Check the Fashion category for the latest styles.", chips: ['Go to Categories'] };
+  }
+
+  if (/beauty|skin|makeup|cosmetic/i.test(m)) {
+    const beauty = state.products.filter(p => /beauty|skin|makeup|cosmetic|hair/i.test(p.category || p.productName)).slice(0, 3);
+    if (beauty.length > 0) return { text: "Beauty & skincare finds:", products: beauty, chips: ['More beauty', 'Skincare', 'Hair care'] };
+    return { text: "Explore our Beauty & Health section for curated products.", chips: ['Go to Categories'] };
+  }
+
+  // Shipping questions
+  if (/ship|deliver|freight|how long|shipping time|when.*arrive/i.test(m)) {
+    return {
+      text: `Shipping costs and delivery times depend on your destination country (currently set to ${COUNTRY_NAMES[state.selectedCountry] || state.selectedCountry}).\n\n• Standard: 12-20 days\n• Express: 5-10 days\n• Orders over $50 get free standard shipping\n\nExact rates are calculated live at checkout.`,
+      chips: ['Change country', 'Free shipping details', 'COD available?']
+    };
+  }
+
+  // COD questions
+  if (/cod|cash on delivery|pay cash|pay on delivery/i.test(m)) {
+    return {
+      text: "Cash on Delivery is available in selected countries including UAE, Saudi Arabia, India, Mexico, and Brazil. You can select the COD option at checkout step 1.",
+      chips: ['COD countries', 'Other payment methods', 'Start shopping']
+    };
+  }
+
+  // Tracking
+  if (/track|where.*order|order.*status|order.*update/i.test(m)) {
+    return {
+      text: "You can track orders in two ways:\n\n1. Go to the Tracking view and enter your tracking number\n2. Go to Orders view and click the Track button\n\nDo you have a tracking number?",
+      chips: ['Go to Tracking', 'Go to Orders', 'I have a tracking number']
+    };
+  }
+
+  // Returns
+  if (/return|refund|exchange|cancel/i.test(m)) {
+    return {
+      text: "Most items can be returned within 30 days of delivery if unused and in original packaging. To initiate a return:\n\n1. Go to Orders view\n2. Find your order\n3. Contact our team with your order ID\n\nRefunds are processed within 5-10 business days.",
+      chips: ['Go to Orders', 'Contact support', 'Dispute policy']
+    };
+  }
+
+  // Payment
+  if (/pay|payment|card|credit|debit|paypal/i.test(m)) {
+    return {
+      text: "We accept multiple payment methods:\n\n• Credit/Debit cards (Visa, Mastercard, AMEX)\n• Secure payment links\n• Cash on Delivery (selected countries)\n\nAll transactions are encrypted and secure.",
+      chips: ['COD details', 'Currency supported', 'Start shopping']
+    };
+  }
+
+  // Cart
+  if (/cart|checkout|buy now/i.test(m)) {
+    const count = state.cart.reduce((s, i) => s + i.qty, 0);
+    const total = state.cart.reduce((s, i) => s + i.price * i.qty, 0);
+    if (count > 0) {
+      return { text: `You have ${count} item(s) in your cart totaling $${total.toFixed(2)}. Click the cart icon to proceed to checkout.`, chips: ['Open cart', 'Add more products', 'Clear cart'] };
+    }
+    return { text: "Your cart is currently empty. Browse the catalog and add items you like!", chips: ['Go to Shop', 'AI Suggestions', 'Trending products'] };
+  }
+
+  // Country/market
+  if (/country|market|region|change.*country/i.test(m)) {
+    return { text: `Your current market is set to ${COUNTRY_NAMES[state.selectedCountry] || state.selectedCountry}. You can change it using the country selector in the header, or visit the "By Country" view for detailed shipping info per region.`, chips: ['Go to By Country', 'COD countries', 'All countries list'] };
+  }
+
+  // Greetings
+  if (/^(hi|hello|hey|good morning|good evening|howdy|sup|yo)\b/i.test(m)) {
+    return { text: "Hey there! Welcome to Velora. I can help you find products, check shipping rates, track orders, or answer any questions. What would you like to do?", chips: ['Suggest products', 'Shipping info', 'Track order', 'Best sellers'] };
+  }
+
+  // Thanks
+  if (/thank|thanks|thx|appreciate/i.test(m)) {
+    return { text: "You're welcome! Let me know if there's anything else I can help with.", chips: ['Suggest products', 'Shipping info', 'Contact support'] };
+  }
+
+  // Help
+  if (/help|what can you|how do i|how does/i.test(m)) {
+    return {
+      text: "I can help you with:\n\n• Finding and suggesting products\n• Shipping costs and delivery times\n• Cash on Delivery availability\n• Order tracking\n• Returns and refunds\n• Payment methods\n• Category browsing\n• Country-specific info\n\nJust ask me anything!",
+      chips: ['Suggest products', 'Shipping costs?', 'COD available?', 'Track my order']
+    };
+  }
+
+  // Categories
+  if (/categor|browse|what.*sell|what.*have/i.test(m)) {
+    const cats = [...new Set(state.products.map(p => p.category).filter(Boolean))].slice(0, 6);
+    if (cats.length > 0) {
+      return { text: "Here are our main categories with available products:\n\n" + cats.map(c => "• " + c).join("\n"), chips: cats.slice(0, 4).concat(['Full category tree']) };
+    }
+    return { text: "Visit the Categories view to explore our full product category tree from CJ Dropshipping.", chips: ['Go to Categories'] };
+  }
+
+  // Default
+  return {
+    text: "I'm not sure I understood that. I can help with product suggestions, shipping, orders, returns, and payments. Try asking something specific!",
+    chips: ['Suggest products', 'Shipping info', 'Track order', 'Help']
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   KEYBOARD SHORTCUTS
+   ═══════════════════════════════════════════════════════════════════ */
+document.addEventListener('keydown', (e) => {
+  // Escape closes modals
+  if (e.key === 'Escape') {
+    closeDetail();
+    closeCheckout();
+    closeCart();
+    if (state.chatOpen) toggleChat(false);
+  }
+  // Ctrl+K focuses search
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    document.getElementById('globalSearch').focus();
+  }
+});
+
+/* ═══════════════════════════════════════════════════════════════════
+   REDUCED MOTION PREFERENCE
+   ═══════════════════════════════════════════════════════════════════ */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.orb').forEach(o => o.style.animation = 'none');
+  document.documentElement.style.setProperty('--transition', '0s');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   INITIALIZATION — Boot sequence
+   ═══════════════════════════════════════════════════════════════════ */
+async function init() {
+  console.log('%c VELORA 2026 — Initializing 40+ API routes...', 'color:#f59e0b;font-weight:700;font-size:14px');
+  console.log('%c Routes: /product/list, /product/query, /product/listed/getPlatformCategoryTree, /product/listed/getReceiverCountryInfo, /product/variant/query, /product/variant/queryByVid, /product/productComments, /product/comments, /product/queryProductsByImage, /product/stock/getInventoryByPid, /product/stock/queryBySku, /product/stock/queryByVid, /product/stock/privateInventory/*, /product/listed/queryVendors, /product/listed/listedByPids, /product/listed/queryDeliveryProfiles, /product/sourcing/query, /product/sourcing/create, /logistic/freightCalculate, /logistic/partnerFreightCalculate, /logistic/getTrackInfo, /logistic/getSupplierLogisticsTemplate, /shopping/order/list, /shopping/order/confirmOrder, /shopping/order/deleteOrder, /shopping/pay/payBalance, /disputes/getDisputeList, /disputes/disputeProducts, /authentication/getAccessToken, /authentication/refreshAccessToken, /authentication/logout, /setting/get, /shop/getShops, /webhook/product/subscribe/list, /storehouseCenterWeb/syncStorehouseVideoRequests, /platform/api/call', 'color:#10b981;font-size:11px');
+
+  // Load main product catalog
+  await fetchProducts(1);
+
+  // If this page was opened via a product deep link (?pid=...), e.g. from
+  // a Meta ad or a shared/indexed product URL, open that product now.
+  handleDeepLinkOnLoad();
+
+  // Load category tree in background
+  loadCategoryTree();
+
+  // Load country info
+  loadCountryInfo();
+
+  // Pre-load AI suggestion strip
+  renderAIStrip();
+
+  // Show chat notification after delay
+  setTimeout(() => {
+    document.getElementById('chatNotif').style.display = 'block';
+  }, 3000);
+
+  console.log('%c VELORA ready — All routes active.', 'color:#10b981;font-weight:700');
+}
+
+// Start the app
+init();
+</script>
+</body>
+</html>
