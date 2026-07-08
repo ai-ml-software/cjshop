@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CJ Globally — Enterprise Sourcing Platform</title>
+  <style>
+    :root {
+      --navy-950: #0a1128;
+      --navy-900: #0f1c3f;
+      --navy-800: #16234a;
+      --navy-700: #1e2f5c;
+      --gray-50: #f7f8fa;
+      --gray-100: #eef0f4;
+      --gray-200: #e2e5ec;
+      --gray-400: #9aa3b2;
+      --gray-600: #5b6472;
+      --accent: #2f6bff;
+      --accent-dark: #1d4fd6;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow-sm: 0 1px 2px rgba(16, 24, 40, .06);
+      --shadow-md: 0 4px 12px rgba(16, 24, 40, .08);
+      --shadow-lg: 0 20px 40px -12px rgba(16, 24, 40, .18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: var(--gray-50);
+      color: var(--navy-950);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ---------- Header ---------- */
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, .85);
+      backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -.02em;
+      color: var(--navy-900);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-600);
+    }
+
+    .nav-links a:hover {
+      color: var(--navy-900);
+    }
+
+    .nav-cta {
+      background: var(--navy-950);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background .2s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-dark);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-800) 60%, var(--navy-700) 100%);
+      color: #fff;
+      padding: 96px 32px 120px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(47, 107, 255, .25), transparent 60%);
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .15);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: #c9d4ff;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 20px;
+      letter-spacing: -.03em;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #b9c2dd;
+      margin: 0 auto 36px;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 8px 20px rgba(47, 107, 255, .35);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: background .2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, .14);
+    }
+
+    /* ---------- Trust bar ---------- */
+    .trust-bar {
+      max-width: 1000px;
+      margin: -56px auto 0;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      padding: 28px 40px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .trust-item {
+      text-align: center;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 24px;
+      color: var(--navy-950);
+      font-weight: 800;
+    }
+
+    .trust-item span {
+      font-size: 13px;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+
+    /* ---------- Sections ---------- */
+    main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 90px 32px 40px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin: 0 0 4px;
+      color: var(--navy-950);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--gray-600);
+      font-size: 14px;
+    }
+
+    .view-all {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .view-all:hover {
+      color: var(--accent-dark);
+    }
+
+    .category-section {
+      margin-bottom: 64px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeInUp .6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform .25s ease, box-shadow .25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .product-img-wrap {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: var(--gray-100);
+      position: relative;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--navy-950);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 6px;
+      letter-spacing: .02em;
+    }
+
+    .product-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy-950);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 39px;
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    .product-price {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--navy-950);
+    }
+
+    .product-cta {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      border: 1px solid var(--gray-200);
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all .2s ease;
+    }
+
+    .product-cta:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* ---------- Skeleton ---------- */
+    .skeleton {
+      background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 37%, var(--gray-200) 63%);
+      background-size: 400% 100%;
+      animation: shimmer 1.4s ease infinite;
+      border-radius: 8px;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 100% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .skel-card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .skel-img {
+      aspect-ratio: 1/1;
+    }
+
+    .skel-line {
+      height: 12px;
+      margin: 14px 16px;
+    }
+
+    .skel-line.sm {
+      width: 60%;
+      margin-bottom: 16px;
+    }
+
+    /* ---------- States ---------- */
+    .state-banner {
+      max-width: 640px;
+      margin: 60px auto;
+      text-align: center;
+      padding: 40px;
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .state-banner h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--navy-950);
+    }
+
+    .state-banner p {
+      margin: 0 0 20px;
+      color: var(--gray-600);
+      font-size: 14px;
+    }
+
+    .retry-btn {
+      background: var(--navy-950);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    .retry-btn:hover {
+      background: var(--accent-dark);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--navy-950);
+      color: #aab3cc;
+      padding: 56px 32px 28px;
+      margin-top: 80px;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      font-weight: 800;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-cols {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 13px;
+      margin: 0 0 14px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: #aab3cc;
+      margin-bottom: 10px;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 40px auto 0;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding-top: 20px;
+      font-size: 13px;
+      text-align: center;
+      color: #7b84a0;
+    }
+
+    @media (max-width:768px) {
+      .nav-links {
+        display: none;
+      }
+
+      main {
+        padding: 70px 18px 40px;
+      }
+
+      .trust-bar {
+        padding: 24px;
+        margin-top: -40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site">
+    <div class="nav-wrap">
+      <a class="logo" href="#">CJ<span>Globally</span></a>
+      <nav class="nav-links">
+        <a href="#categories">Categories</a>
+        <a href="#">Sourcing</a>
+        <a href="#">Logistics</a>
+        <a href="#">Enterprise</a>
+      </nav>
+      <a class="nav-cta" href="#">Get Started</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Trusted Global Sourcing Network</span>
+      <h1>Enterprise-Grade Dropshipping, Sourced &amp; Fulfilled Worldwide</h1>
+      <p>Live inventory from CJDropshipping's global warehouse network — curated, verified, and ready to ship.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#categories">Browse Catalog</a>
+        <a class="btn-secondary" href="#">Talk to Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-item"><strong>1.5M+</strong><span>SKUs Available</span></div>
+    <div class="trust-item"><strong>90+</strong><span>Countries Served</span></div>
+    <div class="trust-item"><strong>24h</strong><span>Avg. Processing</span></div>
+    <div class="trust-item"><strong>99.9%</strong><span>Platform Uptime</span></div>
+  </div>
+
+  <main id="categories">
+    <div id="app-root"></div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">CJ<span style="color:#5b8bff">Globally</span></div>
+        <p style="max-width:260px;font-size:13px;line-height:1.6;">Enterprise dropshipping infrastructure powered by the
+          CJDropshipping API.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="#">Catalog</a><a href="#">Pricing</a><a href="#">API Docs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a><a href="#">Careers</a><a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy</a><a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 CJ Globally. All rights reserved.</div>
+  </footer>
+
+  <script>
+    /* =========================================================
+       API LAYER — CJDropshipping integration
+       ========================================================= */
+    const CJ = (() => {
+      const BASE_URL = "https://developers.cjdropshipping.com/api2.0/v1";
+      const EMAIL = "usamaestonia@gmail.com";        // <-- replace with your CJ account email
+      const API_KEY = "CJ5580877@api@fbfc1eb42a3244a5969aa554bd5743c4";    // <-- replace with your CJ API key
+
+      let accessToken = null;
+      let tokenExpiry = 0;
+
+      // Simple in-memory cache so we don't burn API points on repeat loads
+      const cache = {
+        categories: null,
+        productChecks: new Map(), // categoryId -> {hasProducts, products, ts}
+      };
+      const CACHE_TTL_MS = 1000 * 60 * 30; // 30 min
+
+      async function getAccessToken() {
+        if (accessToken && Date.now() < tokenExpiry) return accessToken;
+        const res = await fetch(`${BASE_URL}/authentication/getAccessToken`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: EMAIL, password: API_KEY }),
+        });
+        if (!res.ok) throw new Error("Auth failed: " + res.status);
+        const data = await res.json();
+        if (!data?.result) throw new Error(data?.message || "Auth rejected");
+        accessToken = data.data.accessToken;
+        // CJ tokens are typically valid ~15 days; refresh a bit early
+        tokenExpiry = Date.now() + 1000 * 60 * 60 * 24 * 14;
+        return accessToken;
+      }
+
+      const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      // CJ enforces ~1 request/sec per endpoint; retry with backoff on 429
+      async function authedFetch(path, options = {}, retries = 4) {
+        const token = await getAccessToken();
+        const res = await fetch(`${BASE_URL}${path}`, {
+          ...options,
+          headers: {
+            "Content-Type": "application/json",
+            "CJ-Access-Token": token,
+            ...(options.headers || {}),
+          },
+        });
+        if (res.status === 429 && retries > 0) {
+          const retryAfter = Number(res.headers.get("Retry-After")) || 0;
+          const backoffMs = retryAfter * 1000 || (5 - retries) * 1200;
+          await sleep(backoffMs);
+          return authedFetch(path, options, retries - 1);
+        }
+        if (!res.ok) throw new Error(`Request failed: ${path} (${res.status})`);
+        return res.json();
+      }
+
+      async function getCategories() {
+        if (cache.categories) return cache.categories;
+        const data = await authedFetch("/product/getCategory");
+        if (!data?.result) throw new Error(data?.message || "Category fetch failed");
+        const tree = data.data || [];
+        cache.categories = tree;
+        return tree;
+      }
+
+      // Checks whether a category has any listed products (small page size to save points)
+      async function checkCategoryProducts(categoryId, categoryName) {
+        const cached = cache.productChecks.get(categoryId);
+        if (cached && Date.now() - cached.ts < CACHE_TTL_MS) return cached;
+
+        const data = await authedFetch(
+          `/product/listV2?categoryId=${encodeURIComponent(categoryId)}&pageNum=1&pageSize=4`,
+          { method: "GET" }
+        );
+
+        const list = data?.data?.list || data?.data?.content || [];
+        const result = {
+          categoryId,
+          categoryName,
+          hasProducts: Array.isArray(list) && list.length > 0,
+          products: list,
+          ts: Date.now(),
+        };
+        cache.productChecks.set(categoryId, result);
+        return result;
+      }
+
+      return { getCategories, checkCategoryProducts, sleep };
+    })();
+
+    /* =========================================================
+       UI RENDERING
+       ========================================================= */
+    const root = document.getElementById("app-root");
+
+    function skeletonMarkup(count = 8) {
+      let cards = "";
+      for (let i = 0; i < count; i++) {
+        cards += `
+      <div class="skel-card">
+        <div class="skeleton skel-img"></div>
+        <div class="skeleton skel-line"></div>
+        <div class="skeleton skel-line sm"></div>
+      </div>`;
+      }
+      return `
+    <div class="category-section" style="animation:none;opacity:1;">
+      <div class="skeleton skel-line" style="width:220px;height:22px;margin:0 0 24px;"></div>
+      <div class="product-grid">${cards}</div>
+    </div>`;
+    }
+
+    function renderLoading() {
+      root.innerHTML = skeletonMarkup(8) + skeletonMarkup(4);
+    }
+
+    function renderError(message, onRetry) {
+      root.innerHTML = `
+    <div class="state-banner">
+      <h3>Unable to load catalog</h3>
+      <p>${message}</p>
+      <button class="retry-btn" id="retry-btn">Retry</button>
+    </div>`;
+      document.getElementById("retry-btn").addEventListener("click", onRetry);
+    }
+
+    function renderEmptyGlobal() {
+      root.innerHTML = `
+    <div class="state-banner">
+      <h3>No categories currently available</h3>
+      <p>Our catalog is being refreshed. Please check back shortly.</p>
+    </div>`;
+    }
+
+    function placeholderImg(seed) {
+      return `https://picsum.photos/seed/${encodeURIComponent(seed)}/400/400`;
+    }
+
+    function productCard(p) {
+      const title = p.productNameEn || p.nameEn || p.productName || "Untitled Product";
+      const price = p.sellPrice || p.price || "—";
+      const img = p.productImage || p.bigImage || placeholderImg(p.pid || title);
+      return `
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <span class="product-badge">In Stock</span>
+        <img src="${img}" alt="${title}" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <div class="product-title">${title}</div>
+        <div class="product-meta">
+          <span class="product-price">$${price}</span>
+          <span class="product-cta">View</span>
+        </div>
+      </div>
+    </div>`;
+    }
+
+    function categorySection(name, products, delayIndex) {
+      const cards = products.map(productCard).join("");
+      return `
+    <div class="category-section" style="animation-delay:${delayIndex * 0.08}s;">
+      <div class="section-head">
+        <div>
+          <h2>${name}</h2>
+          <p>Curated selection, live from global warehouses</p>
+        </div>
+        <a class="view-all" href="#">View all &rarr;</a>
+      </div>
+      <div class="product-grid">${cards}</div>
+    </div>`;
+    }
+
+    /* =========================================================
+       CORE LOGIC: fetch categories, filter out empty ones
+       ========================================================= */
+    async function loadHomepage() {
+      renderLoading();
+      try {
+        const tree = await CJ.getCategories();
+
+        // Build flat list of leaf categories to probe
+        const leafCategories = [];
+        tree.forEach((first) => {
+          (first.categoryFirstList || []).forEach((second) => {
+            (second.categorySecondList || []).forEach((third) => {
+              leafCategories.push({ id: third.categoryId, name: third.categoryName });
+            });
+          });
+        });
+
+        // Fallback: if tree shape differs, probe top-level entries directly
+        const targets = leafCategories.length ? leafCategories : tree.map((c) => ({
+          id: c.categoryId, name: c.categoryFirstName || c.categoryName,
+        }));
+
+        // Check product availability per category — CJ rate-limits to ~1 req/sec,
+        // so requests are sent one at a time with a spacing delay between them.
+        const REQUEST_SPACING_MS = 1100;
+        const results = [];
+        for (const c of targets) {
+          const result = await CJ.checkCategoryProducts(c.id, c.name).catch(() => ({
+            categoryId: c.id, categoryName: c.name, hasProducts: false, products: [],
+          }));
+          results.push(result);
+          await CJ.sleep(REQUEST_SPACING_MS);
+        }
+
+        // CORE RULE: only keep categories where hasProducts === true
+        const visibleCategories = results.filter((r) => r.hasProducts);
+
+        if (visibleCategories.length === 0) {
+          renderEmptyGlobal();
+          return;
+        }
+
+        root.innerHTML = visibleCategories
+          .map((r, idx) => categorySection(r.categoryName, r.products, idx))
+          .join("");
+      } catch (err) {
+        console.error(err);
+        renderError(err.message || "Something went wrong while contacting CJDropshipping.", loadHomepage);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadHomepage);
+  </script>
+
+</body>
+
+</html>
